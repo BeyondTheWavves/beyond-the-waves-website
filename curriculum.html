@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curriculum — Beyond the Waves Aquatics</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0B3142;
+    --teal:#1FB2AE;
+    --tile:#2C5F7C;
+    --pink:#EF5DA8;
+    --sand:#F3FAFA;
+    --paper:#FFFFFF;
+    --ink:#0B3142;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html,body{overflow-x:hidden;}
+  body{position:relative; background:var(--paper); color:var(--ink); font-family:'Work Sans', sans-serif; line-height:1.6;}
+  h1,h2,h3{font-family:'Instrument Serif', serif; font-weight:400;}
+  h1,h2,h3,h4{color:var(--pink);}
+  .eyebrow{font-family:'IBM Plex Mono', monospace; font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--teal);}
+  a{color:inherit; text-decoration:none;}
+
+  /* Decorative wave bands — soft navy & teal wave crests spanning the top and bottom of the page */
+  .wave-band{position:absolute; left:0; width:100%; z-index:-1; pointer-events:none; overflow:hidden;}
+  .wave-band svg{display:block; width:100%; height:100%;}
+  .wave-band.top{top:0; height:150px;}
+  .wave-band.bottom{bottom:0; height:150px;}
+  .wave-band.bottom svg{transform:scaleY(-1);}
+
+  nav{display:flex; justify-content:space-between; align-items:center; padding:20px 6vw; position:sticky; top:0; z-index:50; background:rgba(255,255,255,0.9); backdrop-filter:blur(6px); border-bottom:1px solid rgba(31,178,174,0.25); flex-wrap:wrap; gap:12px;}
+  .logo{font-family:'Instrument Serif', serif; font-size:1.3rem; color:var(--navy);}
+  .logo span{color:var(--pink); font-style:italic;}
+  .navlinks{display:flex; gap:1.6rem; font-size:0.88rem; flex-wrap:wrap;}
+  .navlinks a{color:var(--navy);}
+  .navlinks a:hover{color:var(--teal);}
+  .navcta{background:var(--navy); color:var(--paper); padding:9px 18px; border-radius:2px; font-size:0.82rem;}
+
+  section{padding:5vw 6vw; scroll-margin-top:70px;}
+  .section-head{max-width:60ch; margin-bottom:1rem;}
+  .section-head h1{font-size:clamp(2rem,3.6vw,3rem); margin-top:8px;}
+  .section-head p{margin-top:1rem; font-size:0.96rem; color:var(--navy); opacity:0.85; max-width:60ch;}
+
+  .tabs{display:flex; gap:0.8rem; padding:0 6vw 2vw;}
+  .tab-btn{font-family:'IBM Plex Mono',monospace; font-size:0.8rem; letter-spacing:0.05em; text-transform:uppercase; padding:11px 26px; border:1px solid var(--teal); background:var(--paper); color:var(--navy); border-radius:2px; cursor:pointer; transition:background 0.15s, color 0.15s;}
+  .tab-btn:hover{background:rgba(31,178,174,0.1);}
+  .tab-btn.active{background:var(--pink); border-color:var(--pink); color:var(--paper);}
+  .tab-btn.active:hover{background:var(--pink);}
+
+  .track-panel{padding-top:0;}
+
+  .level-card{border:1px solid rgba(11,49,66,0.12); border-top:2px solid var(--teal); padding:1.8rem; margin-bottom:1.6rem;}
+  .level-card h3{font-size:1.4rem; margin:0 0 1.1rem;}
+  .level-row{margin-bottom:0.9rem;}
+  .level-row:last-child{margin-bottom:0;}
+  .level-row .label{font-family:'IBM Plex Mono',monospace; font-size:0.68rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--teal); display:block; margin-bottom:0.3rem;}
+  .level-row p{font-size:0.92rem; color:var(--navy); opacity:0.9; margin:0;}
+
+  .coming-soon{text-align:center; padding:4vw 6vw 6vw; border:1px solid rgba(11,49,66,0.12); border-top:2px solid var(--teal); margin:0 6vw;}
+  .coming-soon h3{font-size:1.7rem; margin-bottom:0.7rem;}
+  .coming-soon p{font-size:0.95rem; color:var(--navy); opacity:0.85; max-width:50ch; margin:0 auto;}
+
+  footer{color:var(--navy); padding:3vw 6vw 2vw; border-top:2px solid var(--teal);}
+  .foot-bottom{display:flex; justify-content:space-between; font-size:0.78rem; flex-wrap:wrap; gap:8px;}
+
+  @media (max-width:820px){
+    .navlinks{display:none;}
+    .wave-band{height:80px;}
+    .tabs{padding:0 6vw 1.6rem;}
+    .tab-btn{padding:10px 20px; font-size:0.75rem;}
+  }
+</style>
+</head>
+<body>
+
+<svg style="position:absolute; width:0; height:0;" aria-hidden="true">
+  <defs>
+    <path id="wave-band-back" d="M0,90 C60,50 180,130 240,90 C300,50 420,130 480,90 C540,50 660,130 720,90 C780,50 900,130 960,90 C1020,50 1140,130 1200,90 C1260,50 1380,130 1440,90 L1440,0 L0,0 Z"/>
+    <path id="wave-band-front" d="M0,130 C60,165 180,95 240,130 C300,165 420,95 480,130 C540,165 660,95 720,130 C780,165 900,95 960,130 C1020,165 1140,95 1200,130 C1260,165 1380,95 1440,130 L1440,0 L0,0 Z"/>
+  </defs>
+</svg>
+<div class="wave-band top" aria-hidden="true">
+  <svg viewBox="0 0 1440 220" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <use href="#wave-band-back" fill="#0B3142" fill-opacity="0.5"/>
+    <use href="#wave-band-front" fill="#1FB2AE" fill-opacity="0.45"/>
+  </svg>
+</div>
+<div class="wave-band bottom" aria-hidden="true">
+  <svg viewBox="0 0 1440 220" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <use href="#wave-band-back" fill="#0B3142" fill-opacity="0.5"/>
+    <use href="#wave-band-front" fill="#1FB2AE" fill-opacity="0.45"/>
+  </svg>
+</div>
+
+<nav>
+  <a href="index.html" class="logo">Beyond the <span>Waves</span></a>
+  <div class="navlinks">
+    <a href="index.html#home">Home</a><a href="index.html#about">About</a><a href="index.html#programs">Programs</a><a href="curriculum.html">Curriculum</a>
+    <a href="index.html#pricing">Pricing</a><a href="index.html#gallery">Gallery</a><a href="index.html#team">Team</a><a href="index.html#testimonials">Testimonials</a>
+    <a href="index.html#faq">FAQs</a>
+  </div>
+  <a href="index.html#contact" class="navcta">Book a Lesson</a>
+</nav>
+
+<section id="curriculum-intro">
+  <div class="section-head">
+    <div class="eyebrow">Curriculum</div>
+    <h1>Our Leveling System</h1>
+    <p>Every swimmer moves through a structured set of levels, each one building on the last — real technique, real safety skills, and real confidence in the water, one milestone at a time.</p>
+  </div>
+</section>
+
+<div class="tabs" role="tablist">
+  <button class="tab-btn active" id="tab-kids" role="tab" aria-selected="true" aria-controls="kids-track" onclick="showTrack('kids')">Kids</button>
+  <button class="tab-btn" id="tab-adults" role="tab" aria-selected="false" aria-controls="adults-track" onclick="showTrack('adults')">Adults</button>
+</div>
+
+<section id="kids-track" class="track-panel" role="tabpanel" aria-labelledby="tab-kids">
+
+  <div class="level-card">
+    <h3>Level 1</h3>
+    <div class="level-row"><span class="label">Core Drills</span><p>Entry/exit practice using pool steps or ladder; "egg crack" game pouring water on head; assisted bobs with instructor support at hip.</p></div>
+    <div class="level-row"><span class="label">Safety Skill</span><p>Practice reaching for the wall or instructor's hands on command ("reach!") during play, so it becomes automatic.</p></div>
+    <div class="level-row"><span class="label">Breathing Skill</span><p>Bubble-blowing practice above water first, then chin at water level, then full face submerged, using a floating toy as a target.</p></div>
+  </div>
+
+  <div class="level-card">
+    <h3>Level 2</h3>
+    <div class="level-row"><span class="label">Core Drills</span><p>Front float with instructor support progressing to two-finger support; back float with support under head/shoulders; kickboard kicking 3–5 meters; "treasure hunt" for submersion comfort.</p></div>
+    <div class="level-row"><span class="label">Safety Skill</span><p>Practice rolling from front float to back float with instructor assistance — the foundational self-rescue position.</p></div>
+    <div class="level-row"><span class="label">Breathing Skill</span><p>Rhythmic bubble-blowing while fully submerged for 3–5 seconds, building duration gradually.</p></div>
+  </div>
+
+  <div class="level-card">
+    <h3>Level 3</h3>
+    <div class="level-row"><span class="label">Core Drills</span><p>Streamline push-offs from the wall with a glide; freestyle arm circles with flutter kick; independent jump-in with return-to-wall practice; 5-meter freestyle attempts with minimal support.</p></div>
+    <div class="level-row"><span class="label">Safety Skill</span><p>Practice calling out ("Help!") and swimming/walking to the nearest exit point from various points in the shallow end.</p></div>
+    <div class="level-row"><span class="label">Breathing Skill</span><p>Basic rhythm of exhaling underwater, lifting head to inhale, re-submerging — practiced at the wall, then while kicking.</p></div>
+  </div>
+
+  <div class="level-card">
+    <h3>Level 4</h3>
+    <div class="level-row"><span class="label">Core Drills</span><p>Side-breathing drill turning head every 3rd stroke; backstroke arm circles from a supported back float; treading water at the wall up to 10–15 seconds; deep-water comfort exercises with flotation support.</p></div>
+    <div class="level-row"><span class="label">Safety Skill</span><p>Tread water for short bursts within arm's reach of the wall, reinforcing the wall as a "safety base."</p></div>
+    <div class="level-row"><span class="label">Breathing Skill</span><p>Side-breathing coordinated with the freestyle stroke using a kickboard to isolate the breathing side.</p></div>
+  </div>
+
+  <div class="level-card">
+    <h3>Level 5</h3>
+    <div class="level-row"><span class="label">Core Drills</span><p>Breaststroke kick introduced on dry land, then with a kickboard; 25m freestyle attempts; backstroke refinement; treading water building to 30+ seconds.</p></div>
+    <div class="level-row"><span class="label">Safety Skill</span><p>"Swim-float-swim" sequence — swim, roll to a back float to rest, resume swimming.</p></div>
+    <div class="level-row"><span class="label">Breathing Skill</span><p>Bilateral breathing introduced — every 3 strokes, alternating sides.</p></div>
+  </div>
+
+  <div class="level-card">
+    <h3>Level 6</h3>
+    <div class="level-row"><span class="label">Core Drills</span><p>Butterfly introduction with dolphin kick, then arm motion; dive entry practice; 50m continuous swim sets mixing strokes; open turn practice at the wall.</p></div>
+    <div class="level-row"><span class="label">Safety Skill</span><p>Reach-or-throw assist scenario using a pool noodle or kickboard without entering the water.</p></div>
+    <div class="level-row"><span class="label">Breathing Skill</span><p>Controlled breathing during wall turns, exhaling fully before pushing off.</p></div>
+  </div>
+
+  <div class="level-card">
+    <h3>Level 7</h3>
+    <div class="level-row"><span class="label">Core Drills</span><p>Flip turn practice broken into steps; race-pace interval sets (e.g., 4x25m); racing dive start practice; endurance sets with minimal rest.</p></div>
+    <div class="level-row"><span class="label">Safety Skill</span><p>Recognizing signs of a swimmer in distress and the correct response (alert a lifeguard/adult, do not enter the water alone).</p></div>
+    <div class="level-row"><span class="label">Breathing Skill</span><p>Race-pace breath control, breathing every 4–5 strokes to build lung efficiency.</p></div>
+  </div>
+
+</section>
+
+<section id="adults-track" class="track-panel" role="tabpanel" aria-labelledby="tab-adults" style="display:none;">
+  <div class="coming-soon">
+    <h3>Coming Soon</h3>
+    <p>We're putting the finishing touches on our Adult Track curriculum. Check back soon, or reach out to us directly with questions about adult lessons.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-bottom">
+    <span>© 2026 Beyond the Waves Aquatics LLC</span>
+    <span>Beyond the Waves, Beyond Limits.</span>
+  </div>
+</footer>
+
+<script>
+  function showTrack(track){
+    var kids = document.getElementById('kids-track');
+    var adults = document.getElementById('adults-track');
+    var tabKids = document.getElementById('tab-kids');
+    var tabAdults = document.getElementById('tab-adults');
+    var showKids = track === 'kids';
+    kids.style.display = showKids ? '' : 'none';
+    adults.style.display = showKids ? 'none' : '';
+    tabKids.classList.toggle('active', showKids);
+    tabAdults.classList.toggle('active', !showKids);
+    tabKids.setAttribute('aria-selected', showKids);
+    tabAdults.setAttribute('aria-selected', !showKids);
+  }
+</script>
+
+</body>
+</html>
