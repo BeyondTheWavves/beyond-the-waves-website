@@ -17,30 +17,39 @@
     --ink:#0B3142;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
-  body{background:var(--paper); color:var(--ink); font-family:'Work Sans', sans-serif; line-height:1.6;}
+  html,body{overflow-x:hidden;}
+  body{position:relative; background:var(--paper); color:var(--ink); font-family:'Work Sans', sans-serif; line-height:1.6;}
   h1,h2,h3{font-family:'Instrument Serif', serif; font-weight:400;}
+  h1,h2,h3,h4{color:var(--pink);}
   .eyebrow{font-family:'IBM Plex Mono', monospace; font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--teal);}
   a{color:inherit; text-decoration:none;}
   table{border-collapse:collapse; width:100%;}
-  th,td{padding:12px 16px; text-align:center; font-size:0.92rem; border-bottom:1px solid rgba(11,49,66,0.1);}
-  th{font-family:'IBM Plex Mono',monospace; font-size:0.68rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--tile);}
+  th,td{padding:12px 16px; text-align:center; font-size:0.92rem; border-bottom:1px solid rgba(11,49,66,0.12);}
+  th{font-family:'IBM Plex Mono',monospace; font-size:0.68rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--teal);}
 
-  nav{display:flex; justify-content:space-between; align-items:center; padding:20px 6vw; position:sticky; top:0; z-index:50; background:rgba(255,255,255,0.94); backdrop-filter:blur(6px); border-bottom:1px solid rgba(11,49,66,0.08); flex-wrap:wrap; gap:12px;}
-  .logo{font-family:'Instrument Serif', serif; font-size:1.3rem;}
+  /* Decorative wave bands — soft navy & teal wave crests spanning the top and bottom of the page */
+  .wave-band{position:absolute; left:0; width:100%; z-index:-1; pointer-events:none; overflow:hidden;}
+  .wave-band svg{display:block; width:100%; height:100%;}
+  .wave-band.top{top:0; height:150px;}
+  .wave-band.bottom{bottom:0; height:150px;}
+  .wave-band.bottom svg{transform:scaleY(-1);}
+
+  nav{display:flex; justify-content:space-between; align-items:center; padding:20px 6vw; position:sticky; top:0; z-index:50; background:rgba(255,255,255,0.9); backdrop-filter:blur(6px); border-bottom:1px solid rgba(31,178,174,0.25); flex-wrap:wrap; gap:12px;}
+  .logo{font-family:'Instrument Serif', serif; font-size:1.3rem; color:var(--navy);}
   .logo span{color:var(--pink); font-style:italic;}
   .navlinks{display:flex; gap:1.6rem; font-size:0.88rem; flex-wrap:wrap;}
+  .navlinks a{color:var(--navy);}
   .navlinks a:hover{color:var(--teal);}
   .navcta{background:var(--navy); color:var(--paper); padding:9px 18px; border-radius:2px; font-size:0.82rem;}
 
-  .lanes{height:12px; background:repeating-linear-gradient(90deg, var(--pink) 0 42px, transparent 42px 54px); opacity:0.9;}
 
-  .hero{padding:6vw 6vw 5vw; display:grid; grid-template-columns:1.1fr 0.9fr; gap:3vw; align-items:center; background:var(--navy); color:var(--paper);}
+  .hero{padding:6vw 6vw 5vw; display:grid; grid-template-columns:1.1fr 0.9fr; gap:3vw; align-items:center;}
   .hero h1{font-size:clamp(2.2rem, 4.4vw, 3.8rem); line-height:1.08; margin:14px 0 20px;}
-  .hero h1 em{color:var(--pink); font-style:italic;}
-  .hero p{max-width:38ch; color:rgba(255,255,255,0.82); font-size:1.02rem;}
+  .hero h1 em{color:var(--teal); font-style:italic;}
+  .hero p{max-width:38ch; color:var(--navy); opacity:0.85; font-size:1.02rem;}
   .hero-ctas{display:flex; gap:14px; margin-top:26px; flex-wrap:wrap;}
-  .btn-primary{background:var(--pink); color:var(--navy); font-weight:600; padding:13px 24px; border-radius:2px; font-size:0.9rem; display:inline-block;}
-  .btn-ghost{border:1px solid rgba(255,255,255,0.4); color:var(--paper); padding:13px 24px; border-radius:2px; font-size:0.9rem; display:inline-block;}
+  .btn-primary{background:var(--pink); color:var(--paper); font-weight:600; padding:13px 24px; border-radius:2px; font-size:0.9rem; display:inline-block;}
+  .btn-ghost{border:1px solid var(--teal); color:var(--navy); padding:13px 24px; border-radius:2px; font-size:0.9rem; display:inline-block;}
   .hero-visual{aspect-ratio:1/1; border:1px solid rgba(31,178,174,0.4); display:flex; align-items:center; justify-content:center; position:relative;}
   .ring{position:absolute; width:78%; height:78%; border-radius:50%; border:1px solid var(--teal); animation:ripple 4.5s ease-out infinite;}
   .ring:nth-child(2){animation-delay:1.5s;} .ring:nth-child(3){animation-delay:3s;}
@@ -50,81 +59,116 @@
   .section-head{max-width:56ch; margin-bottom:2.6rem;}
   .section-head h2{font-size:clamp(1.8rem,2.8vw,2.4rem); margin-top:8px;}
 
-  .standard{background:var(--sand);}
   .standard-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:2.2rem; margin-top:2rem;}
-  .standard-item{border-top:1px solid rgba(11,49,66,0.2); padding-top:1.1rem;}
-  .standard-item .tag{font-family:'IBM Plex Mono',monospace; font-size:0.68rem; color:var(--tile); letter-spacing:0.07em;}
+  .standard-item{border-top:2px solid var(--teal); padding-top:1.1rem;}
+  .standard-item .tag{font-family:'IBM Plex Mono',monospace; font-size:0.68rem; color:var(--teal); letter-spacing:0.07em;}
   .standard-item h3{font-size:1.3rem; margin:0.4rem 0;}
-  .standard-item p{font-size:0.92rem; opacity:0.85;}
+  .standard-item p{font-size:0.92rem; color:var(--navy); opacity:0.85;}
 
-  .services{background:var(--navy); color:var(--paper);}
-  .lane-row{display:grid; grid-template-columns:110px 1fr 1fr; gap:1.8rem; align-items:center; padding:1.4rem 0; border-top:1px solid rgba(255,255,255,0.14);}
-  .lane-row:last-child{border-bottom:1px solid rgba(255,255,255,0.14);}
-  .lane-num{font-family:'IBM Plex Mono',monospace; color:var(--pink); font-size:0.82rem;}
+  .lane-row{display:grid; grid-template-columns:1fr 1.4fr; gap:1.8rem; align-items:center; padding:1.4rem 0; border-top:1px solid rgba(11,49,66,0.14);}
+  .lane-row:last-child{border-bottom:1px solid rgba(11,49,66,0.14);}
   .lane-row h3{font-size:1.4rem;}
-  .lane-row p{font-size:0.9rem; color:rgba(255,255,255,0.72); max-width:42ch;}
+  .lane-row p{font-size:0.9rem; color:var(--navy); opacity:0.8; max-width:42ch;}
 
   .pricing-block{margin-bottom:2.6rem;}
-  .pricing-block h3{font-size:1.3rem; margin-bottom:0.8rem; color:var(--tile);}
-  .membership{background:var(--sand); padding:2rem; text-align:center; border-radius:2px; margin-top:1rem;}
-  .membership b{color:var(--pink);}
+  .pricing-block h3{font-size:1.3rem; margin-bottom:0.8rem;}
+  .membership-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1.4rem; margin-top:1rem;}
+  .membership{background:var(--paper); padding:1.8rem 1.4rem; text-align:center; border-radius:2px; border:1px solid var(--teal);}
+  .membership b{color:var(--pink); display:block; margin-bottom:0.4rem; font-size:1.05rem;}
+  .membership .price{font-family:'Instrument Serif', serif; font-size:1.8rem; color:var(--navy); display:block; margin-bottom:0.5rem;}
+  .membership p{font-size:0.9rem; color:var(--navy); opacity:0.85;}
+  .payment-note{text-align:center; margin-top:2.4rem;}
+  .payment-note p{font-size:0.88rem; color:var(--navy); opacity:0.75;}
 
-  .about{background:var(--sand); display:grid; grid-template-columns:0.8fr 1.2fr; gap:3vw; align-items:start;}
-  .about-quote{font-family:'Instrument Serif', serif; font-style:italic; font-size:1.5rem; color:var(--tile);}
-  .about p{margin-top:1.1rem; font-size:0.96rem; opacity:0.9;}
+  .about{display:grid; grid-template-columns:0.8fr 1.2fr; gap:3vw; align-items:start;}
+  .about-quote{font-family:'Instrument Serif', serif; font-style:italic; font-size:1.5rem; color:var(--pink);}
+  .about p{margin-top:1.1rem; font-size:0.96rem; color:var(--navy); opacity:0.9;}
+
+  .ps-grid{display:grid; grid-template-columns:1fr 1fr; gap:1.6rem; padding:0 6vw 5vw;}
+  .ps-box{border:1px solid rgba(11,49,66,0.12); border-top:2px solid var(--teal); padding:1.6rem;}
+  .ps-box .tag{font-family:'IBM Plex Mono',monospace; font-size:0.68rem; color:var(--teal); letter-spacing:0.07em;}
+  .ps-box h3{font-size:1.2rem; margin:0.4rem 0 0.6rem;}
+  .ps-box p{font-size:0.9rem; color:var(--navy); opacity:0.85;}
+
+  .gallery-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:2rem;}
+  .gallery-item{aspect-ratio:1/1; background:var(--sand); border:1px solid rgba(11,49,66,0.1); border-radius:2px; display:flex; align-items:center; justify-content:center;}
+  .gallery-item span{font-family:'IBM Plex Mono',monospace; font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--teal); opacity:0.7;}
 
   .team-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:2rem; margin-top:2rem;}
   .team-card{text-align:center;}
-  .team-photo{aspect-ratio:1/1; background:var(--sand); border-radius:50%; margin-bottom:1rem; border:2px solid var(--pink);}
+  .team-photo{aspect-ratio:1/1; background:var(--sand); border-radius:50%; margin-bottom:1rem; border:2px solid var(--teal);}
   .team-card h4{font-family:'Instrument Serif',serif; font-size:1.2rem;}
-  .team-card p{font-size:0.85rem; opacity:0.75;}
+  .team-card p{font-size:0.85rem; color:var(--navy); opacity:0.75;}
 
-  .testimonials{background:var(--sand);}
   .testi-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:2rem; margin-top:2rem;}
-  .testi-card{background:var(--paper); padding:1.8rem; border-left:3px solid var(--pink);}
-  .testi-card p{font-style:italic; font-size:0.95rem;}
-  .testi-card span{display:block; margin-top:1rem; font-family:'IBM Plex Mono',monospace; font-size:0.75rem; color:var(--tile);}
+  .testi-card{background:var(--paper); padding:1.8rem; border:1px solid rgba(11,49,66,0.1); border-left:3px solid var(--teal);}
+  .testi-card p{font-style:italic; font-size:0.95rem; color:var(--navy);}
+  .testi-card span{display:block; margin-top:1rem; font-family:'IBM Plex Mono',monospace; font-size:0.75rem; color:var(--teal);}
 
   .faq-item{border-top:1px solid rgba(11,49,66,0.15); padding:1.4rem 0;}
   .faq-item:last-child{border-bottom:1px solid rgba(11,49,66,0.15);}
   .faq-item h4{font-size:1.05rem; margin-bottom:0.5rem;}
-  .faq-item p{font-size:0.92rem; opacity:0.85;}
+  .faq-item p{font-size:0.92rem; color:var(--navy); opacity:0.85;}
 
-  .contact{background:var(--navy); color:var(--paper);}
   .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:3vw; margin-top:2rem;}
   .form-group{margin-bottom:1.1rem;}
-  .form-group label{display:block; font-size:0.82rem; margin-bottom:0.4rem; color:rgba(255,255,255,0.7);}
-  .form-group input, .form-group select, .form-group textarea{width:100%; padding:11px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.25); color:var(--paper); border-radius:2px; font-family:inherit; font-size:0.92rem;}
-  .contact-info p{margin-bottom:0.6rem; font-size:0.95rem; color:rgba(255,255,255,0.85);}
-  .submit-btn{background:var(--pink); color:var(--navy); font-weight:600; padding:13px 26px; border:none; border-radius:2px; font-size:0.92rem; cursor:pointer; margin-top:0.6rem;}
+  .form-group label{display:block; font-size:0.82rem; margin-bottom:0.4rem; color:var(--navy);}
+  .form-group input, .form-group select, .form-group textarea{width:100%; padding:11px; background:var(--paper); border:1px solid rgba(11,49,66,0.25); color:var(--navy); border-radius:2px; font-family:inherit; font-size:0.92rem;}
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus{outline:none; border-color:var(--teal);}
+  .contact-info p{margin-bottom:0.6rem; font-size:0.95rem; color:var(--navy);}
+  .submit-btn{background:var(--pink); color:var(--paper); font-weight:600; padding:13px 26px; border:none; border-radius:2px; font-size:0.92rem; cursor:pointer; margin-top:0.6rem;}
 
-  footer{background:var(--navy); color:rgba(255,255,255,0.7); padding:3vw 6vw 2vw; border-top:1px solid rgba(255,255,255,0.1);}
+  footer{color:var(--navy); padding:3vw 6vw 2vw; border-top:2px solid var(--teal);}
   .foot-bottom{display:flex; justify-content:space-between; font-size:0.78rem; flex-wrap:wrap; gap:8px;}
 
   @media (max-width:820px){
     .hero{grid-template-columns:1fr;} .hero-visual{display:none;}
-    .standard-grid{grid-template-columns:1fr;} .lane-row{grid-template-columns:1fr;}
+    .lane-row{grid-template-columns:1fr;}
     .about{grid-template-columns:1fr;} .contact-grid{grid-template-columns:1fr;}
+    .ps-grid{grid-template-columns:1fr;}
+    .membership-grid{grid-template-columns:1fr;}
     .navlinks{display:none;}
+    .wave-band{height:80px;}
+    .gallery-grid{grid-template-columns:repeat(2,1fr);}
+    .standard-grid{gap:0.9rem;}
+    .standard-item .tag{font-size:0.6rem;}
+    .standard-item h3{font-size:1.05rem;}
+    .standard-item p{font-size:0.78rem;}
   }
 </style>
 </head>
 <body>
 
+<svg style="position:absolute; width:0; height:0;" aria-hidden="true">
+  <defs>
+    <path id="wave-band-back" d="M0,90 C60,50 180,130 240,90 C300,50 420,130 480,90 C540,50 660,130 720,90 C780,50 900,130 960,90 C1020,50 1140,130 1200,90 C1260,50 1380,130 1440,90 L1440,0 L0,0 Z"/>
+    <path id="wave-band-front" d="M0,130 C60,165 180,95 240,130 C300,165 420,95 480,130 C540,165 660,95 720,130 C780,165 900,95 960,130 C1020,165 1140,95 1200,130 C1260,165 1380,95 1440,130 L1440,0 L0,0 Z"/>
+  </defs>
+</svg>
+<div class="wave-band top" aria-hidden="true">
+  <svg viewBox="0 0 1440 220" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <use href="#wave-band-back" fill="#0B3142" fill-opacity="0.5"/>
+    <use href="#wave-band-front" fill="#1FB2AE" fill-opacity="0.45"/>  </svg>
+</div>
+<div class="wave-band bottom" aria-hidden="true">
+  <svg viewBox="0 0 1440 220" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <use href="#wave-band-back" fill="#0B3142" fill-opacity="0.5"/>
+    <use href="#wave-band-front" fill="#1FB2AE" fill-opacity="0.45"/>  </svg>
+</div>
+
 <nav>
   <div class="logo">Beyond the <span>Waves</span></div>
   <div class="navlinks">
     <a href="#home">Home</a><a href="#about">About</a><a href="#programs">Programs</a>
-    <a href="#pricing">Pricing</a><a href="#team">Team</a><a href="#testimonials">Testimonials</a>
+    <a href="#pricing">Pricing</a><a href="#gallery">Gallery</a><a href="#team">Team</a><a href="#testimonials">Testimonials</a>
     <a href="#faq">FAQs</a>
   </div>
   <a href="#contact" class="navcta">Book a Lesson</a>
 </nav>
-<div class="lanes"></div>
 
 <header class="hero" id="home">
   <div>
-    <div class="eyebrow">NYC · Private &amp; Group Swim Lessons</div>
+    <div class="eyebrow">NYC and Long Island · Private &amp; Group Swim Lessons</div>
     <h1>Beyond the waves,<br><em>beyond limits.</em></h1>
     <p>Personalized, safety-first swim instruction for every age and ability — from a first splash to competitive stroke work.</p>
     <div class="hero-ctas">
@@ -134,7 +178,6 @@
   </div>
   <div class="hero-visual"><div class="ring"></div><div class="ring"></div><div class="ring"></div></div>
 </header>
-<div class="lanes"></div>
 
 <section class="standard">
   <div class="section-head">
@@ -145,29 +188,41 @@
     <div class="standard-item">
       <div class="tag">01 — SAFETY</div>
       <h3>Safety</h3>
-      <p>Every great swimmer starts the same way — feeling safe enough to try. We build that foundation first: real breath control, real judgment, real comfort in the water. No shortcuts, no rushing — just the fundamentals that let confidence grow naturally, lesson by lesson.</p>
+      <p>Every decision, every lesson, every pool partnership starts with safety. It's non-negotiable, not a marketing line — real breath control, real judgment, and real comfort in the water come first, always.</p>
     </div>
     <div class="standard-item">
-      <div class="tag">02 — INDIVIDUALITY</div>
-      <h3>Individuality</h3>
-      <p>Your pace is the right pace. Some swimmers pick up strokes in a week, some need a whole summer just to put their face in the water — and both are exactly on track. Lessons are private, semi-private, or small group, shaped around your swimmer instead of a fixed curriculum.</p>
+      <div class="tag">02 — PERSONALIZED</div>
+      <h3>Personalized</h3>
+      <p>No two swimmers learn the same way. Every lesson is shaped around the person in front of us — their pace, comfort level, and goals — instead of a fixed curriculum. Lessons are available private, semi-private, or in small groups.</p>
     </div>
     <div class="standard-item">
-      <div class="tag">03 — COMMUNITY</div>
-      <h3>Community</h3>
-      <p>Here, we're not a school — we're a family. We support each other through every fear, every setback, and every breakthrough, in and out of the water. Parents cheering from the pool deck, instructors who remember your kid's story, other families who've been exactly where you are — that's what makes the difference.</p>
+      <div class="tag">03 — CONFIDENCE</div>
+      <h3>Confidence</h3>
+      <p>We measure success by how safe and capable a swimmer feels, not just their stroke technique. Fear reduction and trust-building matter as much as skill — and every milestone, no matter how small, gets celebrated.</p>
     </div>
   </div>
 </section>
 
 <section id="about" class="about">
-  <div><div class="about-quote">"Every swimmer deserves to feel strong, safe, and capable in the water."</div></div>
+  <div><div class="about-quote">"Every swimmer should leave feeling safer, stronger, and more confident than when they started."</div></div>
   <div>
     <div class="eyebrow">About Us</div>
-    <p style="font-size:1rem; opacity:1; margin-top:0.6rem;">Beyond the Waves Aquatics is a New York-based swim school built around one idea: swim instruction should meet the swimmer where they are. Whether that's a toddler taking a first dip, an adult swimming for the first time, or an athlete chasing a faster split — every lesson is personal, structured, and safety-first.</p>
-    <p>As we grow, Beyond the Waves is building toward aquatic and physical therapy programming, additional NYC locations, and eventually franchising — always guided by The Beyond Standard.</p>
+    <p style="font-size:1rem; opacity:1; margin-top:0.6rem;">Beyond the Waves Aquatics is a swim education and aquatic wellness company based in New York and Long Island, dedicated to helping people of all ages develop water safety, confidence, independence, and lifelong swimming skills. We offer private, semi-private, and group instruction for children, adults, seniors, athletes, and beginners — every lesson personalized to the swimmer's pace, goals, and comfort level.</p>
   </div>
 </section>
+
+<div class="ps-grid">
+  <div class="ps-box">
+    <div class="tag">THE PROBLEM</div>
+    <h3>Our Problem</h3>
+    <p>Many children and adults don't have access to safe, personalized, high-quality swim instruction. Some are afraid of the water, have had negative past experiences, require additional support, or simply get lost in traditional group lessons.</p>
+  </div>
+  <div class="ps-box">
+    <div class="tag">THE SOLUTION</div>
+    <h3>Our Solution</h3>
+    <p>We provide flexible, professional, and personalized swim programs — led by instructors with 3+ years of experience — that help swimmers become safer in and around the water, build confidence, learn proper technique, and develop lifelong aquatic skills.</p>
+  </div>
+</div>
 
 <section class="services" id="programs">
   <div class="section-head">
@@ -175,17 +230,17 @@
     <h2>Lessons for every swimmer</h2>
   </div>
   <div class="lane-list">
-    <div class="lane-row"><div class="lane-num">LANE 01</div><h3>Children &amp; Beginners</h3><p>Private, semi-private, and group lessons that build water comfort and foundational skills from the very first class.</p></div>
-    <div class="lane-row"><div class="lane-num">LANE 02</div><h3>Adults &amp; Seniors</h3><p>Judgment-free instruction for adult beginners, returning swimmers, and seniors focused on safety, fitness, and independence in the water.</p></div>
-    <div class="lane-row"><div class="lane-num">LANE 03</div><h3>Athletes &amp; Stroke Development</h3><p>Stroke refinement and conditioning work for competitive and recreational athletes looking to swim faster and more efficiently.</p></div>
-    <div class="lane-row"><div class="lane-num">LANE 04</div><h3>Adaptive Swim &amp; Special Needs</h3><p>One-on-one lessons designed around individual needs, for swimmers with disabilities or specific physical or sensory considerations.</p></div>
+    <div class="lane-row"><h3>Children &amp; Beginners</h3><p>Private, semi-private, and group lessons that build water safety, comfort, and foundational skills from the very first class — shaped around your child's pace, not a fixed curriculum.</p></div>
+    <div class="lane-row"><h3>Adults &amp; Seniors</h3><p>Judgment-free instruction for adult beginners, returning swimmers, and seniors — learn-to-swim, stroke refinement, and safe, independent movement in the water.</p></div>
+    <div class="lane-row"><h3>Stroke Development</h3><p>Focused technique correction — freestyle, backstroke, and beyond — for swimmers looking to swim faster and more efficiently.</p></div>
+    <div class="lane-row"><h3>Adaptive Swim &amp; Special Needs</h3><p>One-on-one lessons with adapted teaching methods and a patience-first approach, for swimmers with disabilities or specific physical or sensory needs.</p></div>
   </div>
 </section>
 
 <section id="pricing">
   <div class="section-head">
-    <div class="eyebrow">Investment</div>
-    <h2>Simple, transparent pricing</h2>
+    <div class="eyebrow">Pricing</div>
+    <h2>An investment worth your money</h2>
   </div>
 
   <div class="pricing-block">
@@ -199,7 +254,7 @@
   </div>
 
   <div class="pricing-block">
-    <h3>Semi-Private <span style="font-size:0.8rem; opacity:0.6;">(max 2 students, per swimmer)</span></h3>
+    <h3>Semi-Private <span style="font-size:0.8rem; opacity:0.6;">(max 2 students, per swimmer, must be similar skill level)</span></h3>
     <table>
       <tr><th>Duration</th><th>Per Session</th><th>5-Pack</th><th>10-Pack</th></tr>
       <tr><td>30 min</td><td>$45</td><td>$44/session</td><td>$40/session</td></tr>
@@ -209,7 +264,7 @@
   </div>
 
   <div class="pricing-block">
-    <h3>Group Classes <span style="font-size:0.8rem; opacity:0.6;">(max 4 students, per swimmer)</span></h3>
+    <h3>Group Classes <span style="font-size:0.8rem; opacity:0.6;">(max 4 students, per swimmer, must be similar skill level)</span></h3>
     <table>
       <tr><th>Duration</th><th>Per Session</th><th>5-Pack</th><th>10-Pack</th></tr>
       <tr><td>30 min</td><td>$40</td><td>$38/session</td><td>$35/session</td></tr>
@@ -218,18 +273,57 @@
     </table>
   </div>
 
-  <div class="membership"><b>Membership:</b> $300/month — up to 2 private 30-minute classes per week</div>
+  <div class="pricing-block" style="margin-bottom:0;">
+    <h3>Membership</h3>
+  </div>
+  <div class="membership-grid">
+    <div class="membership">
+      <b>Private</b>
+      <span class="price">$400/mo</span>
+      <p>Up to 2 private 30-minute classes per week</p>
+    </div>
+    <div class="membership">
+      <b>Semi-Private</b>
+      <span class="price">$300/mo</span>
+      <p>Up to 2 semi-private 30-minute classes per week</p>
+    </div>
+    <div class="membership">
+      <b>Group</b>
+      <span class="price">$250/mo</span>
+      <p>Up to 2 group 30-minute classes per week</p>
+    </div>
+  </div>
+
+  <div class="payment-note">
+    <p>Payments are accepted via cash, credit, debit, and Zelle.</p>
+    <p>Contact us for payment options.</p>
+  </div>
 </section>
 
-<section id="team" style="background:var(--sand);">
+<section id="gallery">
+  <div class="section-head">
+    <div class="eyebrow">Gallery</div>
+    <h2>A glimpse of what we do</h2>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item"><span>Coming Soon</span></div>
+    <div class="gallery-item"><span>Coming Soon</span></div>
+    <div class="gallery-item"><span>Coming Soon</span></div>
+    <div class="gallery-item"><span>Coming Soon</span></div>
+    <div class="gallery-item"><span>Coming Soon</span></div>
+    <div class="gallery-item"><span>Coming Soon</span></div>
+  </div>
+</section>
+
+<section id="team">
   <div class="section-head">
     <div class="eyebrow">Meet the Team</div>
     <h2>The people behind the lessons</h2>
   </div>
   <div class="team-grid">
     <div class="team-card"><div class="team-photo"></div><h4>Jannah Elgamssy</h4><p>Founder &amp; Head Instructor</p></div>
-    <div class="team-card"><div class="team-photo"></div><h4>Instructor Name</h4><p>Swim Instructor</p></div>
-    <div class="team-card"><div class="team-photo"></div><h4>Instructor Name</h4><p>Swim Instructor</p></div>
+    <div class="team-card"><div class="team-photo"></div><h4>Demi Baboolal</h4><p>Co-Founder &amp; Instructor</p></div>
+    <div class="team-card"><div class="team-photo"></div><h4>Janel Guerrero</h4><p>Instructor</p></div>
   </div>
 </section>
 
@@ -250,10 +344,13 @@
     <div class="eyebrow">FAQs</div>
     <h2>Good to know</h2>
   </div>
-  <div class="faq-item"><h4>What should my swimmer bring to their first lesson?</h4><p>A swimsuit, towel, and goggles. We'll send full arrival instructions in your welcome email after booking.</p></div>
-  <div class="faq-item"><h4>What's your cancellation policy?</h4><p>Free reschedule with 24+ hours notice. Under 24 hours forfeits the session. Weather cancellations always get a free make-up.</p></div>
+  <div class="faq-item"><h4>What should my swimmer bring to their first lesson?</h4><p>A swimsuit, towel, and goggles. We'll send full arrival instructions — plus your required waiver and medical form — in your welcome email right after booking.</p></div>
+  <div class="faq-item"><h4>What's your cancellation policy?</h4><p>Reschedule for free with 24+ hours notice; cancellations under 24 hours forfeit the session. If we ever need to cancel — due to illness, an emergency, or unsafe weather — you'll always get a free make-up, never charged as a missed session.</p></div>
   <div class="faq-item"><h4>Do you offer make-up lessons?</h4><p>Yes — one make-up lesson is allowed per month for cancellations made with proper notice, valid for 60 days.</p></div>
-  <div class="faq-item"><h4>What ages do you teach?</h4><p>All ages — from toddlers to seniors, beginners to competitive athletes.</p></div>
+  <div class="faq-item"><h4>What ages and abilities do you teach?</h4><p>All ages and abilities — children, adults, seniors, competitive athletes, individuals with disabilities, and adult beginners easing into the water for the first time.</p></div>
+  <div class="faq-item"><h4>What are your payment and refund policies?</h4><p>We accept credit/debit card, Zelle, Venmo, and cash. Single sessions are paid at booking, packages are paid upfront, and memberships bill automatically on the 25th of each month. Packages are fully refundable within 30 days of purchase (used sessions prorated at the single-session rate); memberships can be cancelled anytime with 30 days notice.</p></div>
+  <div class="faq-item"><h4>How will I know how my swimmer is progressing?</h4><p>You'll get a progress update every 4–6 lessons, tied to specific milestones in our leveling system — so you always know what your swimmer is working on and what's next.</p></div>
+  <div class="faq-item"><h4>Do you travel to our pool or building?</h4><p>Yes — for lessons at your building or a private pool, a $20–30 travel fee applies depending on location.</p></div>
 </section>
 
 <section class="contact" id="contact">
@@ -274,7 +371,7 @@
       <button class="submit-btn" type="submit">Send Message</button>
     </form>
     <div class="contact-info">
-      <p><b>Location:</b> New York, NY</p>
+      <p><b>Location:</b> New York, NY &amp; Long Island, NY</p>
       <p><b>Instagram:</b> @beyondthewaves</p>
       <p><b>Email:</b> info@btwaquatics.com</p>
       <p style="margin-top:1.5rem; opacity:0.7; font-size:0.85rem;">We respond to inquiries within 24 hours.</p>
