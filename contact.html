@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Beyond the Waves Aquatics</title>
+<title>Contact — Beyond the Waves Aquatics</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -172,7 +172,7 @@
 <nav>
   <a href="index.html" class="logo"><img src="logo-mark.png" alt="Beyond the Waves Aquatics logo">Beyond the <span>Waves</span></a>
   <div class="navlinks" id="navlinks">
-    <a href="index.html" aria-current="page">Home</a>
+    <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="programs.html">Programs</a>
     <a href="curriculum.html">Curriculum</a>
@@ -188,39 +188,28 @@
   </button>
 </nav>
 
-<header class="hero" id="home">
-  <div>
-    <div class="eyebrow">NYC and Long Island · Mobile Private &amp; Group Swim Lessons</div>
-    <h1>Beyond the waves,<br><em>beyond limits.</em></h1>
-    <p>Personalized, safety-first swim instruction for every age and ability — from a first splash to competitive stroke work.</p>
-    <div class="hero-ctas">
-      <a href="contact.html" class="btn-primary">Book a Lesson</a>
-      <a href="programs.html" class="btn-ghost">See Programs</a>
-    </div>
-  </div>
-  <div class="hero-visual"><div class="ring"></div><div class="ring"></div><div class="ring"></div></div>
-</header>
-
-<section class="standard">
+<section class="contact" id="contact">
   <div class="section-head">
-    <div class="eyebrow">Our Philosophy</div>
-    <h2>The Beyond Standard</h2>
+    <div class="eyebrow">Get in Touch</div>
+    <h1>Let's get you in the water</h1>
   </div>
-  <div class="standard-grid">
-    <div class="standard-item">
-      <div class="tag">01 — SAFETY</div>
-      <h3>Safety</h3>
-      <p>Every decision, every lesson, every pool partnership starts with safety. It's non-negotiable, not a marketing line — real breath control, real judgment, and real comfort in the water come first, always.</p>
-    </div>
-    <div class="standard-item">
-      <div class="tag">02 — PERSONALIZED</div>
-      <h3>Personalized</h3>
-      <p>No two swimmers learn the same way. Every lesson is shaped around the person in front of us — their pace, comfort level, and goals — instead of a fixed curriculum. Lessons are available private, semi-private, or in small groups.</p>
-    </div>
-    <div class="standard-item">
-      <div class="tag">03 — CONFIDENCE</div>
-      <h3>Confidence</h3>
-      <p>We measure success by how safe and capable a swimmer feels, not just their stroke technique. Fear reduction and trust-building matter as much as skill — and every milestone, no matter how small, gets celebrated.</p>
+  <div class="contact-grid">
+    <form onsubmit="event.preventDefault(); alert('Connect this form to Google Forms or your booking system.');">
+      <div class="form-group"><label>Name</label><input type="text" required></div>
+      <div class="form-group"><label>Email</label><input type="email" required></div>
+      <div class="form-group"><label>Phone</label><input type="tel"></div>
+      <div class="form-group"><label>Swimmer's Age</label><input type="text"></div>
+      <div class="form-group"><label>Program Interested In</label>
+        <select><option>Children & Beginners</option><option>Adults & Seniors</option><option>Athletes</option><option>Adaptive Swim</option></select>
+      </div>
+      <div class="form-group"><label>Message</label><textarea rows="4"></textarea></div>
+      <button class="submit-btn" type="submit">Send Message</button>
+    </form>
+    <div class="contact-info">
+      <p><b>Location:</b> New York, NY &amp; Long Island, NY</p>
+      <p><b>Instagram:</b> @beyondthewaves</p>
+      <p><b>Email:</b> info@btwaquatics.com</p>
+      <p style="margin-top:1.5rem; opacity:0.7; font-size:0.85rem;">We respond to inquiries within 24 hours.</p>
     </div>
   </div>
 </section>
