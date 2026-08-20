@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Beyond the Waves Aquatics</title>
+<title>Pricing — Beyond the Waves Aquatics</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -172,11 +172,11 @@
 <nav>
   <a href="index.html" class="logo"><img src="logo-mark.png" alt="Beyond the Waves Aquatics logo">Beyond the <span>Waves</span></a>
   <div class="navlinks" id="navlinks">
-    <a href="index.html" aria-current="page">Home</a>
+    <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="programs.html">Programs</a>
     <a href="curriculum.html">Curriculum</a>
-    <a href="pricing.html">Pricing</a>
+    <a href="pricing.html" aria-current="page">Pricing</a>
     <a href="gallery.html">Gallery</a>
     <a href="team.html">Team</a>
     <a href="testimonials.html#testimonials">Testimonials</a>
@@ -188,40 +188,66 @@
   </button>
 </nav>
 
-<header class="hero" id="home">
-  <div>
-    <div class="eyebrow">NYC and Long Island · Mobile Private &amp; Group Swim Lessons</div>
-    <h1>Beyond the waves,<br><em>beyond limits.</em></h1>
-    <p>Personalized, safety-first swim instruction for every age and ability — from a first splash to competitive stroke work.</p>
-    <div class="hero-ctas">
-      <a href="contact.html" class="btn-primary">Book a Lesson</a>
-      <a href="programs.html" class="btn-ghost">See Programs</a>
-    </div>
-  </div>
-  <div class="hero-visual"><div class="ring"></div><div class="ring"></div><div class="ring"></div></div>
-</header>
-
-<section class="standard">
+<section id="pricing">
   <div class="section-head">
-    <div class="eyebrow">Our Philosophy</div>
-    <h2>The Beyond Standard</h2>
+    <div class="eyebrow">Pricing</div>
+    <h1>An investment worth your money</h1>
   </div>
-  <div class="standard-grid">
-    <div class="standard-item">
-      <div class="tag">01 — SAFETY</div>
-      <h3>Safety</h3>
-      <p>Every decision, every lesson, every pool partnership starts with safety. It's non-negotiable, not a marketing line — real breath control, real judgment, and real comfort in the water come first, always.</p>
+
+  <div class="pricing-block">
+    <h3>Private Lessons</h3>
+    <table>
+      <tr><th>Duration</th><th>Single</th><th>5-Pack</th><th>10-Pack</th></tr>
+      <tr><td>30 min</td><td>$60</td><td>$270 ($54/session)</td><td>$530 ($53/session)</td></tr>
+      <tr><td>45 min</td><td>$85</td><td>$400 ($80/session)</td><td>$770 ($77/session)</td></tr>
+      <tr><td>60 min</td><td>$100</td><td>$480 ($96/session)</td><td>$900 ($90/session)</td></tr>
+    </table>
+  </div>
+
+  <div class="pricing-block">
+    <h3>Semi-Private <span style="font-size:0.8rem; opacity:0.6;">(max 2 students, per swimmer, must be similar skill level)</span></h3>
+    <table>
+      <tr><th>Duration</th><th>Per Session</th><th>5-Pack</th><th>10-Pack</th></tr>
+      <tr><td>30 min</td><td>$45</td><td>$44/session</td><td>$40/session</td></tr>
+      <tr><td>45 min</td><td>$70</td><td>$68/session</td><td>$65/session</td></tr>
+      <tr><td>60 min</td><td>$80</td><td>$78/session</td><td>$75/session</td></tr>
+    </table>
+  </div>
+
+  <div class="pricing-block">
+    <h3>Group Classes <span style="font-size:0.8rem; opacity:0.6;">(max 4 students, per swimmer, must be similar skill level)</span></h3>
+    <table>
+      <tr><th>Duration</th><th>Per Session</th><th>5-Pack</th><th>10-Pack</th></tr>
+      <tr><td>30 min</td><td>$40</td><td>$38/session</td><td>$35/session</td></tr>
+      <tr><td>45 min</td><td>$55</td><td>$54/session</td><td>$50/session</td></tr>
+      <tr><td>60 min</td><td>$70</td><td>$68/session</td><td>$65/session</td></tr>
+    </table>
+  </div>
+
+  <div class="pricing-block" style="margin-bottom:0;">
+    <h3>Membership</h3>
+  </div>
+  <div class="membership-grid">
+    <div class="membership">
+      <b>Private</b>
+      <span class="price">$400/mo</span>
+      <p>Up to 2 private 30-minute classes per week</p>
     </div>
-    <div class="standard-item">
-      <div class="tag">02 — PERSONALIZED</div>
-      <h3>Personalized</h3>
-      <p>No two swimmers learn the same way. Every lesson is shaped around the person in front of us — their pace, comfort level, and goals — instead of a fixed curriculum. Lessons are available private, semi-private, or in small groups.</p>
+    <div class="membership">
+      <b>Semi-Private</b>
+      <span class="price">$300/mo</span>
+      <p>Up to 2 semi-private 30-minute classes per week</p>
     </div>
-    <div class="standard-item">
-      <div class="tag">03 — CONFIDENCE</div>
-      <h3>Confidence</h3>
-      <p>We measure success by how safe and capable a swimmer feels, not just their stroke technique. Fear reduction and trust-building matter as much as skill — and every milestone, no matter how small, gets celebrated.</p>
+    <div class="membership">
+      <b>Group</b>
+      <span class="price">$250/mo</span>
+      <p>Up to 2 group 30-minute classes per week</p>
     </div>
+  </div>
+
+  <div class="payment-note">
+    <p>Payments are accepted via cash, credit, debit, and Zelle.</p>
+    <p><a href="contact.html">Contact us</a> for payment options.</p>
   </div>
 </section>
 
