@@ -194,15 +194,17 @@
     <h1>Let's get you in the water</h1>
   </div>
   <div class="contact-grid">
-    <form onsubmit="event.preventDefault(); alert('Connect this form to Google Forms or your booking system.');">
-      <div class="form-group"><label>Name</label><input type="text" required></div>
-      <div class="form-group"><label>Email</label><input type="email" required></div>
-      <div class="form-group"><label>Phone</label><input type="tel"></div>
-      <div class="form-group"><label>Swimmer's Age</label><input type="text"></div>
+    <form action="https://formspree.io/f/info@btwaquatics.com" method="POST">
+      <input type="hidden" name="_subject" value="New Lesson Inquiry — Beyond the Waves Aquatics">
+      <input type="text" name="_gotcha" style="display:none">
+      <div class="form-group"><label>Name</label><input type="text" name="name" required></div>
+      <div class="form-group"><label>Email</label><input type="email" name="email" required></div>
+      <div class="form-group"><label>Phone</label><input type="tel" name="phone"></div>
+      <div class="form-group"><label>Swimmer's Age</label><input type="text" name="swimmer_age"></div>
       <div class="form-group"><label>Program Interested In</label>
-        <select><option>Children & Beginners</option><option>Adults & Seniors</option><option>Athletes</option><option>Adaptive Swim</option></select>
+        <select name="program"><option>Children & Beginners</option><option>Adults & Seniors</option><option>Athletes</option><option>Adaptive Swim</option></select>
       </div>
-      <div class="form-group"><label>Message</label><textarea rows="4"></textarea></div>
+      <div class="form-group"><label>Message</label><textarea name="message" rows="4"></textarea></div>
       <button class="submit-btn" type="submit">Send Message</button>
     </form>
     <div class="contact-info">
