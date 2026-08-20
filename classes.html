@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Curriculum — Beyond the Waves Aquatics</title>
+<title>Classes — Beyond the Waves Aquatics</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -58,9 +58,13 @@
   .tab-btn.active:hover{background:var(--pink);}
 
   .track-panel{padding-top:0;}
+  .track-head{margin-bottom:1.6rem;}
+  .track-head h2{font-size:1.5rem; margin-bottom:0.6rem;}
+  .track-head p{font-size:0.92rem; color:var(--navy); opacity:0.85; max-width:62ch;}
 
   .level-card{border:1px solid rgba(11,49,66,0.12); border-top:2px solid var(--teal); padding:1.8rem; margin-bottom:1.6rem;}
   .level-card h3{font-size:1.4rem; margin:0 0 1.1rem;}
+  .level-card > p{font-size:0.92rem; color:var(--navy); opacity:0.9; margin:0;}
   .level-row{margin-bottom:0.9rem;}
   .level-row:last-child{margin-bottom:0;}
   .level-row .label{font-family:'IBM Plex Mono',monospace; font-size:0.68rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--teal); display:block; margin-bottom:0.3rem;}
@@ -69,6 +73,7 @@
   .coming-soon{text-align:center; padding:4vw 6vw 6vw; border:1px solid rgba(11,49,66,0.12); border-top:2px solid var(--teal); margin:0 6vw;}
   .coming-soon h3{font-size:1.7rem; margin-bottom:0.7rem;}
   .coming-soon p{font-size:0.95rem; color:var(--navy); opacity:0.85; max-width:50ch; margin:0 auto;}
+  .coming-soon a{color:var(--teal); text-decoration:underline;}
 
   footer{color:var(--navy); padding:3vw 6vw 2vw; border-top:2px solid var(--teal);}
   .foot-bottom{display:flex; justify-content:space-between; font-size:0.78rem; flex-wrap:wrap; gap:8px;}
@@ -78,7 +83,7 @@
     .navlinks.open{display:flex; flex-direction:column; position:absolute; top:100%; left:0; right:0; background:var(--paper); padding:1.4rem 6vw 1.8rem; gap:1rem; border-bottom:1px solid rgba(31,178,174,0.25); box-shadow:0 12px 20px rgba(11,49,66,0.08);}
     .burger{display:flex;}
     .wave-band{height:80px;}
-    .tabs{padding:0 6vw 1.6rem;}
+    .tabs{padding:0 6vw 1.6rem; flex-wrap:wrap;}
     .tab-btn{padding:10px 20px; font-size:0.75rem;}
   }
 </style>
@@ -110,7 +115,7 @@
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="programs.html">Programs</a>
-    <a href="curriculum.html" aria-current="page">Curriculum</a>
+    <a href="classes.html" aria-current="page">Classes</a>
     <a href="pricing.html">Pricing</a>
     <a href="gallery.html">Gallery</a>
     <a href="team.html">Team</a>
@@ -123,20 +128,25 @@
   </button>
 </nav>
 
-<section id="curriculum-intro">
+<section id="classes-intro">
   <div class="section-head">
-    <div class="eyebrow">Curriculum</div>
-    <h1>Our Leveling System</h1>
-    <p>Every swimmer moves through a structured set of levels, each one building on the last — real technique, real safety skills, and real confidence in the water, one milestone at a time.</p>
+    <div class="eyebrow">Classes</div>
+    <h1>Classes</h1>
+    <p>A class for everyone — somewhere everyone fits in.</p>
   </div>
 </section>
 
 <div class="tabs" role="tablist">
   <button class="tab-btn active" id="tab-kids" role="tab" aria-selected="true" aria-controls="kids-track" onclick="showTrack('kids')">Kids</button>
   <button class="tab-btn" id="tab-adults" role="tab" aria-selected="false" aria-controls="adults-track" onclick="showTrack('adults')">Adults</button>
+  <button class="tab-btn" id="tab-seniors" role="tab" aria-selected="false" aria-controls="seniors-track" onclick="showTrack('seniors')">Seniors</button>
 </div>
 
 <section id="kids-track" class="track-panel" role="tabpanel" aria-labelledby="tab-kids">
+  <div class="track-head">
+    <h2>Our Leveling System</h2>
+    <p>Every swimmer moves through a structured set of levels, each one building on the last — real technique, real safety skills, and real confidence in the water, one milestone at a time.</p>
+  </div>
 
   <div class="level-card">
     <h3>Level 1</h3>
@@ -186,13 +196,38 @@
     <div class="level-row"><span class="label">Safety Skill</span><p>Recognizing signs of a swimmer in distress and the correct response (alert a lifeguard/adult, do not enter the water alone).</p></div>
     <div class="level-row"><span class="label">Breathing Skill</span><p>Race-pace breath control, breathing every 4–5 strokes to build lung efficiency.</p></div>
   </div>
-
 </section>
 
 <section id="adults-track" class="track-panel" role="tabpanel" aria-labelledby="tab-adults" style="display:none;">
+  <div class="track-head">
+    <h2>Our Leveling System</h2>
+    <p>Every swimmer moves through a structured set of levels, each one building on the last — real technique, real safety skills, and real confidence in the water, one milestone at a time.</p>
+  </div>
   <div class="coming-soon">
     <h3>Coming Soon</h3>
-    <p>We're putting the finishing touches on our Adult Track curriculum. Check back soon, or <a href="contact.html" style="color:var(--teal); text-decoration:underline;">reach out to us</a> directly with questions about adult lessons.</p>
+    <p>We're putting the finishing touches on our Adult Track curriculum. Check back soon, or <a href="contact.html">reach out to us</a> directly with questions about adult lessons.</p>
+  </div>
+</section>
+
+<section id="seniors-track" class="track-panel" role="tabpanel" aria-labelledby="tab-seniors" style="display:none;">
+  <div class="track-head">
+    <h2>Senior Classes</h2>
+    <p>Low-impact, supportive classes designed for older adults — building strength, balance, and confidence in the water at a pace that feels right for you.</p>
+  </div>
+
+  <div class="level-card">
+    <h3>Water Aerobics</h3>
+    <p>A low-impact, full-body workout designed to improve cardiovascular health, strength, flexibility, and endurance through water-based exercise.</p>
+  </div>
+
+  <div class="level-card">
+    <h3>Aqua Balance &amp; Mobility</h3>
+    <p>A gentle aquatic class focused on improving balance, mobility, coordination, and functional strength in a supportive, low-impact environment.</p>
+  </div>
+
+  <div class="level-card">
+    <h3>Senior Swim &amp; Water Confidence</h3>
+    <p>Personalized swim instruction designed to build water safety skills, swimming ability, confidence, and independence for older adults of all experience levels.</p>
   </div>
 </section>
 
@@ -205,17 +240,13 @@
 
 <script>
   function showTrack(track){
-    var kids = document.getElementById('kids-track');
-    var adults = document.getElementById('adults-track');
-    var tabKids = document.getElementById('tab-kids');
-    var tabAdults = document.getElementById('tab-adults');
-    var showKids = track === 'kids';
-    kids.style.display = showKids ? '' : 'none';
-    adults.style.display = showKids ? 'none' : '';
-    tabKids.classList.toggle('active', showKids);
-    tabAdults.classList.toggle('active', !showKids);
-    tabKids.setAttribute('aria-selected', showKids);
-    tabAdults.setAttribute('aria-selected', !showKids);
+    var tracks = ['kids','adults','seniors'];
+    tracks.forEach(function(t){
+      document.getElementById(t + '-track').style.display = (t === track) ? '' : 'none';
+      var tab = document.getElementById('tab-' + t);
+      tab.classList.toggle('active', t === track);
+      tab.setAttribute('aria-selected', t === track);
+    });
   }
 
   function toggleMenu(){
