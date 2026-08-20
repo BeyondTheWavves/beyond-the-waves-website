@@ -64,8 +64,9 @@
   .pricing-block h3{font-size:1.3rem; margin-bottom:0.8rem;}
   .senior-class-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1.4rem; margin-bottom:2.6rem;}
   .senior-class-card{border:1px solid rgba(11,49,66,0.12);}
-  .senior-class-img{aspect-ratio:4/3; background:var(--sand); border-bottom:2px solid var(--teal); display:flex; align-items:center; justify-content:center;}
+  .senior-class-img{aspect-ratio:4/3; background:var(--sand); border-bottom:2px solid var(--teal); display:flex; align-items:center; justify-content:center; overflow:hidden;}
   .senior-class-img span{font-family:'IBM Plex Mono',monospace; font-size:0.65rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--teal); opacity:0.7;}
+  .senior-class-img img{width:100%; height:100%; object-fit:cover; display:block;}
   .senior-class-card h3{font-size:1.1rem; padding:1rem 1.2rem 0.2rem;}
   .senior-class-card .price{display:block; padding:0 1.2rem 1.2rem; font-family:'Instrument Serif',serif; font-size:1.3rem; color:var(--navy);}
   .senior-class-card .price em{font-size:0.85rem; opacity:0.7; font-style:normal; font-family:'Work Sans',sans-serif;}
@@ -255,7 +256,7 @@
 <section id="pricing-seniors" class="track-panel" role="tabpanel" aria-labelledby="tab-seniors" style="display:none;">
   <div class="senior-class-grid">
     <div class="senior-class-card">
-      <div class="senior-class-img"><span>Image Placeholder</span></div>
+      <div class="senior-class-img"><img src="images/water-aerobics.jpg" alt="Seniors doing water aerobics"></div>
       <h3>Water Aerobics</h3>
       <span class="price">$20 <em>per class</em></span>
     </div>
