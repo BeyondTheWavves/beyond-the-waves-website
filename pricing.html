@@ -62,8 +62,13 @@
 
   .pricing-block{margin-bottom:2.6rem;}
   .pricing-block h3{font-size:1.3rem; margin-bottom:0.8rem;}
-  .single-price{font-family:'Instrument Serif', serif; font-size:1.8rem; color:var(--navy);}
-  .single-price span{font-size:0.9rem; opacity:0.7; font-family:'Work Sans',sans-serif;}
+  .senior-class-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1.4rem; margin-bottom:2.6rem;}
+  .senior-class-card{border:1px solid rgba(11,49,66,0.12);}
+  .senior-class-img{aspect-ratio:4/3; background:var(--sand); border-bottom:2px solid var(--teal); display:flex; align-items:center; justify-content:center;}
+  .senior-class-img span{font-family:'IBM Plex Mono',monospace; font-size:0.65rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--teal); opacity:0.7;}
+  .senior-class-card h3{font-size:1.1rem; padding:1rem 1.2rem 0.2rem;}
+  .senior-class-card .price{display:block; padding:0 1.2rem 1.2rem; font-family:'Instrument Serif',serif; font-size:1.3rem; color:var(--navy);}
+  .senior-class-card .price em{font-size:0.85rem; opacity:0.7; font-style:normal; font-family:'Work Sans',sans-serif;}
   .membership-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1.4rem; margin-top:1rem;}
   .membership{background:var(--paper); padding:1.8rem 1.4rem; text-align:center; border-radius:2px; border:1px solid var(--teal);}
   .membership b{color:var(--pink); display:block; margin-bottom:0.4rem; font-size:1.05rem;}
@@ -78,6 +83,7 @@
 
   @media (max-width:820px){
     .membership-grid{grid-template-columns:1fr;}
+    .senior-class-grid{grid-template-columns:1fr;}
     .navlinks{display:none;}
     .navlinks.open{display:flex; flex-direction:column; position:absolute; top:100%; left:0; right:0; background:var(--paper); padding:1.4rem 6vw 1.8rem; gap:1rem; border-bottom:1px solid rgba(31,178,174,0.25); box-shadow:0 12px 20px rgba(11,49,66,0.08);}
     .burger{display:flex;}
@@ -247,9 +253,22 @@
 </section>
 
 <section id="pricing-seniors" class="track-panel" role="tabpanel" aria-labelledby="tab-seniors" style="display:none;">
-  <div class="pricing-block">
-    <h3>Senior Classes <span style="font-size:0.8rem; opacity:0.6;">(Water Aerobics, Aqua Balance &amp; Mobility, Senior Swim &amp; Water Confidence)</span></h3>
-    <p class="single-price">$20 <span>per class</span></p>
+  <div class="senior-class-grid">
+    <div class="senior-class-card">
+      <div class="senior-class-img"><span>Image Placeholder</span></div>
+      <h3>Water Aerobics</h3>
+      <span class="price">$20 <em>per class</em></span>
+    </div>
+    <div class="senior-class-card">
+      <div class="senior-class-img"><span>Image Placeholder</span></div>
+      <h3>Aqua Balance &amp; Mobility</h3>
+      <span class="price">$20 <em>per class</em></span>
+    </div>
+    <div class="senior-class-card">
+      <div class="senior-class-img"><span>Image Placeholder</span></div>
+      <h3>Senior Swim &amp; Water Confidence</h3>
+      <span class="price">$20 <em>per class</em></span>
+    </div>
   </div>
 
   <div class="pricing-block" style="margin-bottom:0;">

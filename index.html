@@ -56,7 +56,8 @@
   .hero-ctas{display:flex; gap:14px; margin-top:26px; flex-wrap:wrap;}
   .btn-primary{background:var(--pink); color:var(--paper); font-weight:600; padding:13px 24px; border-radius:2px; font-size:0.9rem; display:inline-block;}
   .btn-ghost{border:1px solid var(--teal); color:var(--navy); padding:13px 24px; border-radius:2px; font-size:0.9rem; display:inline-block;}
-  .hero-visual{aspect-ratio:1/1; border:1px solid rgba(31,178,174,0.4); display:flex; align-items:center; justify-content:center; position:relative;}
+  .hero-visual{aspect-ratio:1/1; border:1px solid rgba(31,178,174,0.4); display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; background:var(--sand);}
+  .hero-visual img{width:100%; height:100%; object-fit:cover; display:block;}
   .ring{position:absolute; width:78%; height:78%; border-radius:50%; border:1px solid var(--teal); animation:ripple 4.5s ease-out infinite;}
   .ring:nth-child(2){animation-delay:1.5s;} .ring:nth-child(3){animation-delay:3s;}
   @keyframes ripple{0%{transform:scale(0.3); opacity:0.9;} 100%{transform:scale(1); opacity:0;}}
@@ -198,7 +199,10 @@
       <a href="programs.html" class="btn-ghost">See Programs</a>
     </div>
   </div>
-  <div class="hero-visual"><div class="ring"></div><div class="ring"></div><div class="ring"></div></div>
+  <div class="hero-visual">
+    <img src="images/hero.jpg" alt="Swim instructor helping a swimmer in the pool">
+    <div class="ring"></div><div class="ring"></div><div class="ring"></div>
+  </div>
 </header>
 
 <section class="standard">
