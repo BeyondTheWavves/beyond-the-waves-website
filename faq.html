@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact — Beyond the Waves Aquatics</title>
-<meta name="description" content="Contact Beyond the Waves Aquatics to book a movement-informed swim lesson in NYC or Long Island, or ask a question about our programs.">
+<title>FAQ — Beyond the Waves Aquatics</title>
+<meta name="description" content="Answers about movement-informed swim lessons, pricing, policies, and booking at Beyond the Waves Aquatics in NYC and Long Island.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -53,17 +53,27 @@
   section{padding:5vw 6vw; scroll-margin-top:70px;}
   .section-head{max-width:60ch; margin-bottom:1.6rem;}
   .section-head h1{font-size:clamp(2rem,3.6vw,3rem); margin-top:8px;}
+  .section-head h2{font-size:clamp(1.8rem,2.8vw,2.4rem); margin-top:8px;}
   .section-head p{margin-top:1rem; font-size:0.96rem; color:var(--navy); opacity:0.9; max-width:60ch;}
 
-  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:3vw; margin-top:2rem;}
-  .form-group{margin-bottom:1.1rem;}
-  .form-group label{display:block; font-size:0.82rem; margin-bottom:0.4rem; color:var(--navy);}
-  .form-group input, .form-group select, .form-group textarea{width:100%; padding:11px; background:var(--paper); border:1px solid rgba(11,49,66,0.25); color:var(--navy); border-radius:2px; font-family:inherit; font-size:0.92rem; transition:border-color 0.15s ease, box-shadow 0.15s ease;}
-  .form-group input:focus, .form-group select:focus, .form-group textarea:focus{outline:none; border-color:var(--teal); box-shadow:0 0 0 3px rgba(31,178,174,0.15);}
-  .contact-info p{margin-bottom:0.6rem; font-size:0.95rem; color:var(--navy);}
-  .contact-info h3{font-size:1.1rem; margin-bottom:0.8rem;}
-  .submit-btn{background:var(--pink); color:var(--paper); font-weight:600; padding:13px 26px; border:none; border-radius:2px; font-size:0.92rem; cursor:pointer; margin-top:0.6rem; box-shadow:0 4px 14px rgba(239,93,168,0.28); transition:transform 0.18s ease, box-shadow 0.18s ease;}
-  .submit-btn:hover{transform:translateY(-2px); box-shadow:0 8px 20px rgba(239,93,168,0.38);}
+  .expect-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; margin-top:2rem;}
+  .expect-item{border:1px solid rgba(11,49,66,0.12); border-top:2px solid var(--teal); padding:1.3rem; font-family:'Instrument Serif',serif; font-size:1.15rem; color:var(--pink); text-align:center;}
+
+  .faq-item{border-top:1px solid rgba(11,49,66,0.15); padding:1.4rem 0;}
+  .faq-item:last-child{border-bottom:1px solid rgba(11,49,66,0.15);}
+  .faq-item h4{font-size:1.05rem; margin-bottom:0.5rem;}
+  .faq-item p{font-size:0.92rem; color:var(--navy); opacity:0.85;}
+
+  .cta-band{background:var(--sand); border-top:2px solid var(--teal); text-align:center; padding:4vw 6vw;}
+  .cta-band h2{font-size:clamp(1.6rem,2.6vw,2.2rem);}
+  .cta-band p{max-width:60ch; margin:1rem auto 0; font-size:0.96rem; color:var(--navy); opacity:0.9;}
+  .cta-band .cta-buttons{display:flex; gap:14px; justify-content:center; margin-top:1.8rem; flex-wrap:wrap;}
+  .cta-band .cta-contact{margin-top:1.6rem; font-size:0.85rem; color:var(--navy); opacity:0.75;}
+  .cta-band .cta-contact a{text-decoration:underline; color:var(--teal);}
+  .btn-primary{background:var(--pink); color:var(--paper); font-weight:600; padding:13px 24px; border-radius:2px; font-size:0.9rem; display:inline-block; box-shadow:0 4px 14px rgba(239,93,168,0.28); transition:transform 0.18s ease, box-shadow 0.18s ease;}
+  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 8px 20px rgba(239,93,168,0.38);}
+  .btn-ghost{border:1px solid var(--teal); color:var(--navy); padding:13px 24px; border-radius:2px; font-size:0.9rem; display:inline-block; transition:background 0.18s ease, color 0.18s ease, transform 0.18s ease;}
+  .btn-ghost:hover{background:var(--teal); color:var(--paper); transform:translateY(-2px);}
 
   .footer-top{display:flex; flex-wrap:wrap; justify-content:space-between; gap:2rem; padding-bottom:2rem; margin-bottom:1.6rem; border-bottom:1px solid rgba(11,49,66,0.1);}
   .footer-brand .logo{margin-bottom:0.7rem;}
@@ -74,8 +84,6 @@
   .footer-social{display:flex; flex-direction:column; align-items:flex-start; gap:0.9rem;}
   .footer-social span{font-size:0.85rem; color:var(--navy);}
   .footer-social .btn-primary{padding:10px 20px; font-size:0.82rem;}
-  .btn-primary{background:var(--pink); color:var(--paper); font-weight:600; padding:13px 24px; border-radius:2px; font-size:0.9rem; display:inline-block; box-shadow:0 4px 14px rgba(239,93,168,0.28); transition:transform 0.18s ease, box-shadow 0.18s ease;}
-  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 8px 20px rgba(239,93,168,0.38);}
 
   footer{color:var(--navy); padding:3vw 6vw 2vw; border-top:2px solid var(--teal);}
   .foot-bottom{display:flex; justify-content:space-between; font-size:0.78rem; flex-wrap:wrap; gap:8px;}
@@ -84,8 +92,9 @@
     .navlinks{display:none;}
     .navlinks.open{display:flex; flex-direction:column; position:absolute; top:100%; left:0; right:0; background:var(--paper); padding:1.4rem 6vw 1.8rem; gap:1rem; border-bottom:1px solid rgba(31,178,174,0.25); box-shadow:0 12px 20px rgba(11,49,66,0.08);}
     .burger{display:flex;}
-    .contact-grid{grid-template-columns:1fr;}
     .wave-band{height:80px;}
+    .expect-grid{grid-template-columns:1fr;}
+    .cta-band .cta-buttons{flex-direction:column; align-items:center;}
     .footer-top{flex-direction:column;}
   }
 </style>
@@ -120,8 +129,8 @@
     <a href="classes.html">Classes</a>
     <a href="pricing.html">Pricing</a>
     <a href="team.html">Our Team</a>
-    <a href="faq.html">FAQ</a>
-    <a href="contact.html" aria-current="page">Contact</a>
+    <a href="faq.html" aria-current="page">FAQ</a>
+    <a href="contact.html">Contact</a>
   </div>
   <div class="nav-right">
     <a href="contact.html" class="navcta">Book Now</a>
@@ -131,43 +140,54 @@
   </div>
 </nav>
 
-<section class="contact" id="contact">
+<section id="expect">
   <div class="section-head">
-    <div class="eyebrow">Get in Touch</div>
-    <h1>Let's Find Your Place Beyond the Waves.</h1>
-    <p>Have questions? Not sure which program is right for you? Tell us a little about yourself or your swimmer and what you hope to accomplish. We'll help you determine the best place to begin.</p>
+    <div class="eyebrow">What You Can Expect</div>
+    <h1>What You Can Expect</h1>
+    <p>We're a growing, movement-informed swim school — real client reviews are on their way. In the meantime, here's what every swimmer can count on at Beyond the Waves.</p>
   </div>
-  <div class="contact-grid">
-    <form action="https://formspree.io/f/mqpzndwg" method="POST">
-      <input type="hidden" name="_subject" value="New Lesson Inquiry — Beyond the Waves Aquatics">
-      <input type="text" name="_gotcha" style="display:none">
-      <div class="form-group"><label>Name</label><input type="text" name="name" required></div>
-      <div class="form-group"><label>Email</label><input type="email" name="email" required></div>
-      <div class="form-group"><label>Phone</label><input type="tel" name="phone"></div>
-      <div class="form-group"><label>Who Are You Inquiring For?</label>
-        <select name="inquiring_for"><option>Myself</option><option>My Child</option><option>A Family Member</option><option>Someone Else</option></select>
-      </div>
-      <div class="form-group"><label>Age of Swimmer</label><input type="text" name="swimmer_age"></div>
-      <div class="form-group"><label>Current Swimming Experience</label>
-        <select name="experience"><option>No experience / first time in water</option><option>Beginner</option><option>Intermediate</option><option>Advanced / competitive</option></select>
-      </div>
-      <div class="form-group"><label>Primary Goal</label><input type="text" name="goal" placeholder="e.g. overcome fear, learn to swim, improve technique"></div>
-      <div class="form-group"><label>Program of Interest</label>
-        <select name="program"><option>Private Lessons</option><option>Semi-Private Lessons</option><option>Group Lessons</option><option>Adult Swim</option><option>Adaptive Aquatics</option><option>Stroke Development</option><option>Senior Aquatics</option><option>Not sure yet</option></select>
-      </div>
-      <div class="form-group"><label>Preferred Location</label><input type="text" name="location" placeholder="NYC or Long Island"></div>
-      <div class="form-group"><label>Preferred Days/Times</label><input type="text" name="preferred_times"></div>
-      <div class="form-group"><label>Anything Else We Should Know?</label><textarea name="message" rows="4"></textarea></div>
-      <button class="submit-btn" type="submit">Let's Make Waves</button>
-    </form>
-    <div class="contact-info">
-      <h3>Prefer to Talk First?</h3>
-      <p><b>Location:</b> New York, NY &amp; Long Island, NY</p>
-      <p><b>Instagram:</b> @beyondthewaves</p>
-      <p><b>Email:</b> info@btwaquatics.com</p>
-      <p style="margin-top:1.5rem; opacity:0.7; font-size:0.85rem;">We respond to inquiries within 24 hours.</p>
-    </div>
+  <div class="expect-grid">
+    <div class="expect-item">Personalized Instruction</div>
+    <div class="expect-item">Movement-Informed Teaching</div>
+    <div class="expect-item">Safety at Every Level</div>
+    <div class="expect-item">Clear Communication</div>
+    <div class="expect-item">Purposeful Progression</div>
+    <div class="expect-item">Confidence-Building</div>
+    <div class="expect-item">The Beyond Standard</div>
   </div>
+  <div style="margin-top:2rem;"><a href="contact.html" class="btn-ghost">Experience It for Yourself</a></div>
+</section>
+
+<section id="faq" style="padding-top:0;">
+  <div class="section-head">
+    <div class="eyebrow">FAQs</div>
+    <h2>Good to know</h2>
+  </div>
+  <div class="faq-item"><h4>Do I need previous swimming experience?</h4><p>No. We meet every swimmer exactly where they are, from a first splash to advanced technique work — there's no prerequisite to start.</p></div>
+  <div class="faq-item"><h4>Do you teach adults? Am I too old to learn?</h4><p>Your swim journey doesn't have an expiration date. We teach adult beginners, returning swimmers, and anyone refining their stroke, at any age.</p></div>
+  <div class="faq-item"><h4>Do you teach swimmers with disabilities?</h4><p>Yes. Our adaptive aquatics program offers one-on-one lessons with adapted teaching methods and a patience-first approach, designed around each swimmer's abilities, communication, and sensory needs.</p></div>
+  <div class="faq-item"><h4>What does "movement-informed" mean?</h4><p>It means our teaching philosophy is shaped by an understanding of human movement — body mechanics, coordination, motor learning, and individual differences — brought into swim education by our founders' training in physical therapy. We look at how a swimmer moves through a skill, not just whether they complete it.</p></div>
+  <div class="faq-item"><h4>Are your lessons physical therapy?</h4><p>No. Beyond the Waves Aquatics provides swim education and aquatic programming, not physical therapy or medical treatment. Our movement-informed approach is shaped by leadership with education and training in physical therapy and human movement. We apply that perspective to how we think about teaching, progression, movement, and individualization.</p></div>
+  <div class="faq-item"><h4>What is The Beyond Standard?</h4><p>It's our teaching philosophy, built on four pillars: Safety, Movement, Personalization, and Confidence. Every instructor is trained to teach through this same standard, so the experience stays consistent no matter who's teaching your lesson.</p></div>
+  <div class="faq-item"><h4>How do I know which lesson is right for me?</h4><p>Not sure what level or format to start at? <a href="contact.html">Contact us</a> and tell us a bit about your goals — we'll help you find the right starting point.</p></div>
+  <div class="faq-item"><h4>Where are lessons offered?</h4><p>We serve NYC and Long Island, teaching at partner pools and, where available, at your building or a private pool (a $20–30 travel fee applies for off-site lessons).</p></div>
+  <div class="faq-item"><h4>What should I bring?</h4><p>A swimsuit, towel, and goggles. We'll send full arrival instructions — plus your required waiver and medical form — in your welcome email right after booking.</p></div>
+  <div class="faq-item"><h4>Can siblings or friends take lessons together?</h4><p>Yes — that's exactly what our semi-private and group formats are for. Progress is better together, and everyone still gets individualized instruction and feedback.</p></div>
+  <div class="faq-item"><h4>What happens during the first lesson?</h4><p>Your instructor greets you by name, checks in on any concerns or past water experience, and ends the lesson with a quick recap of what was covered and what's next.</p></div>
+  <div class="faq-item"><h4>How is progress measured?</h4><p>Through our leveling system — swim skills, safety skills, breathing skills, and movement focus at every level — with progress updates every 4–6 lessons so you always know what your swimmer is working on.</p></div>
+  <div class="faq-item"><h4>What certifications do instructors have?</h4><p>Every instructor is trained through The Beyond Standard. Our founders, Jannah Elgamssy and Demi Baboolal, are both Doctor of Physical Therapy (DPT) candidates, bringing that movement background into how our whole team teaches.</p></div>
+  <div class="faq-item"><h4>What's your cancellation and payment policy?</h4><p>Reschedule for free with 24+ hours notice; cancellations under 24 hours forfeit the session. Weather or instructor-initiated cancellations always get a free make-up. We accept credit/debit card, Zelle, Venmo, and cash — single sessions are paid at booking, packages paid upfront, memberships billed automatically on the 25th of each month.</p></div>
+  <div class="faq-item"><h4>How do I book?</h4><p>Head to our <a href="contact.html">Contact page</a> and tell us about your goals — we'll respond within 24 hours to get you started.</p></div>
+</section>
+
+<section class="cta-band">
+  <h2>Ready to Go Beyond?</h2>
+  <p>Still have questions, or ready to book? We're one message away.</p>
+  <div class="cta-buttons">
+    <a href="contact.html" class="btn-primary">Book Now</a>
+    <a href="contact.html" class="btn-ghost">Contact Us</a>
+  </div>
+  <p class="cta-contact">Email <a href="mailto:info@btwaquatics.com">info@btwaquatics.com</a> &middot; Instagram @beyondthewaves &middot; NYC &amp; Long Island</p>
 </section>
 
 <footer>
