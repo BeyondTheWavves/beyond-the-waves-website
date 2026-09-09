@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Beyond the Waves Aquatics</title>
+<title>Beyond the Waves Aquatics — Movement-Informed Swim Lessons NYC &amp; Long Island</title>
+<meta name="description" content="Personalized, movement-informed swim education for every age and ability in NYC and Long Island. Founded by professionals trained in physical therapy.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -24,11 +25,6 @@
   .eyebrow{font-family:'IBM Plex Mono', monospace; font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--teal);}
   a{color:inherit; text-decoration:none; transition:color 0.15s ease;}
   :focus-visible{outline:2px solid var(--teal); outline-offset:2px;}
-  table{border-collapse:collapse; width:100%;}
-  th,td{padding:12px 16px; text-align:center; font-size:0.92rem; border-bottom:1px solid rgba(11,49,66,0.12);}
-  tbody tr{transition:background 0.15s ease;}
-  tbody tr:hover{background:rgba(31,178,174,0.05);}
-  th{font-family:'IBM Plex Mono',monospace; font-size:0.68rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--teal);}
 
   /* Decorative wave bands — soft navy & teal wave crests spanning the top and bottom of the page */
   .wave-band{position:absolute; left:0; width:100%; z-index:-1; pointer-events:none; overflow:hidden;}
@@ -54,10 +50,11 @@
   .burger.open span:nth-child(2){opacity:0;}
   .burger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
 
-  .hero{padding:6vw 6vw 5vw; display:grid; grid-template-columns:1.1fr 0.9fr; gap:3vw; align-items:center;}
+  .hero{padding:5vw 6vw 3vw; display:grid; grid-template-columns:1.1fr 0.9fr; gap:3vw; align-items:center;}
   .hero h1{font-size:clamp(2.2rem, 4.4vw, 3.8rem); line-height:1.08; margin:14px 0 20px;}
   .hero h1 em{color:var(--teal); font-style:italic;}
-  .hero p{max-width:38ch; color:var(--navy); opacity:0.85; font-size:1.02rem;}
+  .hero .lede{font-family:'Instrument Serif',serif; font-style:italic; font-size:1.15rem; color:var(--tile); margin-bottom:0.8rem;}
+  .hero p{max-width:44ch; color:var(--navy); opacity:0.85; font-size:1.02rem;}
   .hero-ctas{display:flex; gap:14px; margin-top:26px; flex-wrap:wrap;}
   .btn-primary{background:var(--pink); color:var(--paper); font-weight:600; padding:13px 24px; border-radius:2px; font-size:0.9rem; display:inline-block; box-shadow:0 4px 14px rgba(239,93,168,0.28); transition:transform 0.18s ease, box-shadow 0.18s ease;}
   .btn-primary:hover{transform:translateY(-2px); box-shadow:0 8px 20px rgba(239,93,168,0.38);}
@@ -68,79 +65,44 @@
   .ring:nth-child(2){animation-delay:1.5s;} .ring:nth-child(3){animation-delay:3s;}
   @keyframes ripple{0%{transform:scale(0.3); opacity:0.9;} 100%{transform:scale(1); opacity:0;}}
 
-  section{padding:5vw 6vw; scroll-margin-top:70px;}
-  .section-head{max-width:56ch; margin-bottom:2.6rem;}
-  .section-head h1{font-size:clamp(2rem,3.6vw,3rem); margin-top:8px;}
-  .section-head h2{font-size:clamp(1.8rem,2.8vw,2.4rem); margin-top:8px;}
-  .section-head p{margin-top:1rem; font-size:0.96rem; color:var(--navy); opacity:0.85; max-width:60ch;}
+  .trust-bar{display:flex; flex-wrap:wrap; justify-content:center; gap:2.4rem; padding:1.4rem 6vw; border-top:1px solid rgba(11,49,66,0.08); border-bottom:1px solid rgba(11,49,66,0.08);}
+  .trust-bar span{font-family:'IBM Plex Mono',monospace; font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--teal);}
 
-  .standard-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:2.2rem; margin-top:2rem;}
+  section{padding:5vw 6vw; scroll-margin-top:70px;}
+  .section-head{max-width:60ch; margin-bottom:2rem;}
+  .section-head h2{font-size:clamp(1.8rem,2.8vw,2.4rem); margin-top:8px;}
+  .section-head p{margin-top:1rem; font-size:0.98rem; color:var(--navy); opacity:0.9; max-width:60ch;}
+
+  .movement-list p{font-size:0.98rem; color:var(--navy); margin-bottom:0.8rem; max-width:66ch;}
+  .movement-list p:last-of-type{font-family:'Instrument Serif',serif; font-style:italic; font-size:1.15rem; color:var(--pink); margin-top:1.4rem;}
+
+  .community-list p{font-size:0.98rem; color:var(--navy); opacity:0.9; margin-bottom:0.5rem;}
+  .community-close{font-family:'Instrument Serif',serif; font-style:italic; font-size:1.3rem; color:var(--pink); margin-top:1.4rem;}
+
+  .standard-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:2rem; margin-top:2rem;}
   .standard-item{border-top:2px solid var(--teal); padding-top:1.1rem; transition:transform 0.2s ease;}
   .standard-item:hover{transform:translateY(-4px);}
   .standard-item .tag{font-family:'IBM Plex Mono',monospace; font-size:0.68rem; color:var(--teal); letter-spacing:0.07em;}
   .standard-item h3{font-size:1.3rem; margin:0.4rem 0;}
   .standard-item p{font-size:0.92rem; color:var(--navy); opacity:0.85;}
+  .standard-close{font-family:'Instrument Serif',serif; font-style:italic; font-size:1.2rem; color:var(--pink); margin-top:2.2rem; text-align:center;}
 
-  .lane-row{display:grid; grid-template-columns:1fr 1.4fr; gap:1.8rem; align-items:center; padding:1.4rem 0; border-top:1px solid rgba(11,49,66,0.14);}
-  .lane-row:last-child{border-bottom:1px solid rgba(11,49,66,0.14);}
-  .lane-row h3{font-size:1.4rem;}
-  .lane-row p{font-size:0.9rem; color:var(--navy); opacity:0.8; max-width:42ch;}
+  .cta-band{background:var(--sand); border-top:2px solid var(--teal); text-align:center; padding:4vw 6vw;}
+  .cta-band h2{font-size:clamp(1.6rem,2.6vw,2.2rem);}
+  .cta-band p{max-width:60ch; margin:1rem auto 0; font-size:0.96rem; color:var(--navy); opacity:0.9;}
+  .cta-band .cta-buttons{display:flex; gap:14px; justify-content:center; margin-top:1.8rem; flex-wrap:wrap;}
+  .cta-band .cta-contact{margin-top:1.6rem; font-size:0.85rem; color:var(--navy); opacity:0.75;}
+  .cta-band .cta-contact a{text-decoration:underline; color:var(--teal);}
 
-  .pricing-block{margin-bottom:2.6rem;}
-  .pricing-block h3{font-size:1.3rem; margin-bottom:0.8rem;}
-  .membership-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1.4rem; margin-top:1rem;}
-  .membership{background:var(--paper); padding:1.8rem 1.4rem; text-align:center; border-radius:2px; border:1px solid var(--teal); transition:transform 0.2s ease, box-shadow 0.2s ease;}
-  .membership:hover{transform:translateY(-4px); box-shadow:0 12px 28px rgba(11,49,66,0.08);}
-  .membership b{color:var(--pink); display:block; margin-bottom:0.4rem; font-size:1.05rem;}
-  .membership .price{font-family:'Instrument Serif', serif; font-size:1.8rem; color:var(--navy); display:block; margin-bottom:0.5rem;}
-  .membership p{font-size:0.9rem; color:var(--navy); opacity:0.85;}
-  .payment-note{text-align:center; margin-top:2.4rem;}
-  .payment-note p{font-size:0.88rem; color:var(--navy); opacity:0.75;}
-  .payment-note a{color:var(--teal); text-decoration:underline;}
-
-  .about{display:grid; grid-template-columns:0.8fr 1.2fr; gap:3vw; align-items:start;}
-  .about-quote{font-family:'Instrument Serif', serif; font-style:italic; font-size:1.5rem; color:var(--pink);}
-  .about p{margin-top:1.1rem; font-size:0.96rem; color:var(--navy); opacity:0.9;}
-
-  .ps-grid{display:grid; grid-template-columns:1fr 1fr; gap:1.6rem; padding:0 6vw 5vw;}
-  .ps-box{border:1px solid rgba(11,49,66,0.12); border-top:2px solid var(--teal); padding:1.6rem; transition:transform 0.2s ease, box-shadow 0.2s ease;}
-  .ps-box:hover{transform:translateY(-4px); box-shadow:0 12px 28px rgba(11,49,66,0.08);}
-  .ps-box .tag{font-family:'IBM Plex Mono',monospace; font-size:0.68rem; color:var(--teal); letter-spacing:0.07em;}
-  .ps-box h3{font-size:1.2rem; margin:0.4rem 0 0.6rem;}
-  .ps-box p{font-size:0.9rem; color:var(--navy); opacity:0.85;}
-
-  .gallery-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:2rem;}
-  .gallery-item{aspect-ratio:1/1; background:var(--sand); border:1px solid rgba(11,49,66,0.1); border-radius:2px; display:flex; align-items:center; justify-content:center; overflow:hidden; transition:transform 0.2s ease, box-shadow 0.2s ease;}
-  .gallery-item:hover{transform:translateY(-4px); box-shadow:0 12px 28px rgba(11,49,66,0.08);}
-  .gallery-item span{font-family:'IBM Plex Mono',monospace; font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--teal); opacity:0.7;}
-
-  .team-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:2rem; margin-top:2rem;}
-  .team-card{text-align:center;}
-  .team-photo{aspect-ratio:1/1; background:var(--sand); border-radius:50%; margin-bottom:1rem; border:2px solid var(--teal); transition:transform 0.2s ease;}
-  .team-card:hover .team-photo{transform:scale(1.04);}
-  .team-card h4{font-family:'Instrument Serif',serif; font-size:1.2rem;}
-  .team-card p{font-size:0.85rem; color:var(--navy); opacity:0.75;}
-
-  .testi-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:2rem; margin-top:2rem;}
-  .testi-card{background:var(--paper); padding:1.8rem; border:1px solid rgba(11,49,66,0.1); border-left:3px solid var(--teal); transition:transform 0.2s ease, box-shadow 0.2s ease;}
-  .testi-card:hover{transform:translateY(-4px); box-shadow:0 12px 28px rgba(11,49,66,0.08);}
-  .testi-card p{font-style:italic; font-size:0.95rem; color:var(--navy);}
-  .testi-card span{display:block; margin-top:1rem; font-family:'IBM Plex Mono',monospace; font-size:0.75rem; color:var(--teal);}
-
-  .faq-item{border-top:1px solid rgba(11,49,66,0.15); padding:1.4rem 0;}
-  .faq-item:last-child{border-bottom:1px solid rgba(11,49,66,0.15);}
-  .faq-item h4{font-size:1.05rem; margin-bottom:0.5rem;}
-  .faq-item p{font-size:0.92rem; color:var(--navy); opacity:0.85;}
-
-  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:3vw; margin-top:2rem;}
-  .form-group{margin-bottom:1.1rem;}
-  .form-group label{display:block; font-size:0.82rem; margin-bottom:0.4rem; color:var(--navy);}
-  .form-group input, .form-group select, .form-group textarea{width:100%; padding:11px; background:var(--paper); border:1px solid rgba(11,49,66,0.25); color:var(--navy); border-radius:2px; font-family:inherit; font-size:0.92rem;}
-  .form-group input, .form-group select, .form-group textarea{transition:border-color 0.15s ease, box-shadow 0.15s ease;}
-  .form-group input:focus, .form-group select:focus, .form-group textarea:focus{outline:none; border-color:var(--teal); box-shadow:0 0 0 3px rgba(31,178,174,0.15);}
-  .contact-info p{margin-bottom:0.6rem; font-size:0.95rem; color:var(--navy);}
-  .submit-btn{background:var(--pink); color:var(--paper); font-weight:600; padding:13px 26px; border:none; border-radius:2px; font-size:0.92rem; cursor:pointer; margin-top:0.6rem; box-shadow:0 4px 14px rgba(239,93,168,0.28); transition:transform 0.18s ease, box-shadow 0.18s ease;}
-  .submit-btn:hover{transform:translateY(-2px); box-shadow:0 8px 20px rgba(239,93,168,0.38);}
+  .footer-top{display:flex; flex-wrap:wrap; justify-content:space-between; gap:2rem; padding-bottom:2rem; margin-bottom:1.6rem; border-bottom:1px solid rgba(11,49,66,0.1);}
+  .footer-brand .logo{margin-bottom:0.7rem;}
+  .footer-brand p{font-size:0.85rem; color:var(--navy); opacity:0.75; max-width:32ch;}
+  .footer-brand .footer-location{font-family:'IBM Plex Mono',monospace; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--teal); opacity:1; margin-top:0.6rem;}
+  .footer-links{display:flex; flex-direction:column; gap:0.5rem; font-size:0.88rem;}
+  .footer-links a:hover{color:var(--teal);}
+  .footer-social{display:flex; flex-direction:column; align-items:flex-start; gap:0.9rem;}
+  .footer-social span{font-size:0.85rem; color:var(--navy);}
+  .footer-social .btn-primary{padding:10px 20px; font-size:0.82rem;}
 
   footer{color:var(--navy); padding:3vw 6vw 2vw; border-top:2px solid var(--teal);}
   .foot-bottom{display:flex; justify-content:space-between; font-size:0.78rem; flex-wrap:wrap; gap:8px;}
@@ -150,16 +112,11 @@
     .navlinks.open{display:flex; flex-direction:column; position:absolute; top:100%; left:0; right:0; background:var(--paper); padding:1.4rem 6vw 1.8rem; gap:1rem; border-bottom:1px solid rgba(31,178,174,0.25); box-shadow:0 12px 20px rgba(11,49,66,0.08);}
     .burger{display:flex;}
     .hero{grid-template-columns:1fr;} .hero-visual{display:none;}
-    .lane-row{grid-template-columns:1fr;}
-    .about{grid-template-columns:1fr;} .contact-grid{grid-template-columns:1fr;}
-    .ps-grid{grid-template-columns:1fr;}
-    .membership-grid{grid-template-columns:1fr;}
     .wave-band{height:80px;}
-    .gallery-grid{grid-template-columns:repeat(2,1fr);}
-    .standard-grid{gap:0.9rem;}
-    .standard-item .tag{font-size:0.6rem;}
-    .standard-item h3{font-size:1.05rem;}
-    .standard-item p{font-size:0.78rem;}
+    .trust-bar{gap:1.2rem; padding:1.2rem 6vw;}
+    .standard-grid{grid-template-columns:1fr; gap:1.2rem;}
+    .cta-band .cta-buttons{flex-direction:column; align-items:center;}
+    .footer-top{flex-direction:column;}
   }
 </style>
 </head>
@@ -192,11 +149,12 @@
     <a href="programs.html">Programs</a>
     <a href="classes.html">Classes</a>
     <a href="pricing.html">Pricing</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="testimonials.html">Testimonials &amp; FAQs</a>
+    <a href="team.html">Our Team</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
   </div>
   <div class="nav-right">
-    <a href="contact.html" class="navcta">Book a Lesson</a>
+    <a href="contact.html" class="navcta">Book Now</a>
     <button class="burger" id="burgerBtn" aria-label="Menu" aria-expanded="false" aria-controls="navlinks" onclick="toggleMenu()">
       <span></span><span></span><span></span>
     </button>
@@ -205,16 +163,57 @@
 
 <header class="hero" id="home">
   <div>
-    <div class="eyebrow">NYC and Long Island · Mobile Private &amp; Group Swim Lessons</div>
+    <div class="eyebrow">NYC &amp; Long Island · Movement-Informed Swim Education</div>
     <h1>Beyond the waves,<br><em>beyond limits.</em></h1>
-    <p>Personalized, safety-first swim instruction for every age and ability — from a first splash to competitive stroke work.</p>
+    <p class="lede">Movement-Informed Swim Education, Built Differently.</p>
+    <p>Beyond the Waves Aquatics combines exceptional swim instruction with a deeper understanding of how people move, learn, and progress. Founded by professionals trained in physical therapy, our approach helps swimmers of all ages and abilities build stronger skills, greater confidence, and lasting independence in the water.</p>
     <div class="hero-ctas">
-      <a href="contact.html" class="btn-primary">Book a Lesson</a>
-      <a href="programs.html" class="btn-ghost">See Programs</a>
+      <a href="contact.html" class="btn-primary">Book Your Lesson</a>
+      <a href="#movement" class="btn-ghost">Discover Our Approach</a>
     </div>
   </div>
   <div class="hero-visual"><div class="ring"></div><div class="ring"></div><div class="ring"></div></div>
 </header>
+
+<div class="trust-bar">
+  <span>Movement-Informed</span>
+  <span>Safety-First</span>
+  <span>All Ages &amp; Abilities</span>
+  <span>Personalized Progression</span>
+</div>
+
+<section id="movement">
+  <div class="section-head">
+    <div class="eyebrow">Our Approach</div>
+    <h2>Swimming Is Movement. We Know Movement.</h2>
+  </div>
+  <div class="movement-list">
+    <p>Swimming is more than a collection of strokes. Every kick, breath, rotation, reach, and transition requires the body to coordinate movement with confidence and control.</p>
+    <p>Founded by professionals trained in physical therapy, Beyond the Waves brings a deeper understanding of human movement into swim education.</p>
+    <p>We consider how each swimmer moves, learns, adapts, and progresses — then build instruction around the individual in front of us.</p>
+    <p>Because better instruction begins with better understanding.</p>
+  </div>
+  <a href="about.html" class="btn-ghost">Explore Our Approach</a>
+</section>
+
+<section id="community" style="background:var(--sand);">
+  <div class="section-head">
+    <div class="eyebrow">Our Community</div>
+    <h2>There Is a Place for You Beyond the Waves.</h2>
+  </div>
+  <div class="community-list">
+    <p>Some swimmers come to us for their very first experience in the water.</p>
+    <p>Some want to overcome fear.</p>
+    <p>Some want to improve their technique.</p>
+    <p>Some want greater independence.</p>
+    <p>Some want to become stronger athletes.</p>
+    <p>Some simply want to feel comfortable in a place that once felt uncomfortable.</p>
+    <p>Different ages. Different abilities. Different goals.</p>
+    <p>One community built around progress.</p>
+  </div>
+  <p class="community-close">A place for every swimmer. A path for every goal.</p>
+  <div style="margin-top:1.6rem;"><a href="programs.html" class="btn-ghost">Find Your Program</a></div>
+</section>
 
 <section class="standard">
   <div class="section-head">
@@ -225,22 +224,54 @@
     <div class="standard-item">
       <div class="tag">01 — SAFETY</div>
       <h3>Safety</h3>
-      <p>Every decision, every lesson, every pool partnership starts with safety. It's non-negotiable, not a marketing line — real breath control, real judgment, and real comfort in the water come first, always.</p>
+      <p>Progress begins with trust. We create an environment where swimmers feel secure enough to learn, challenge themselves, and grow. Safety is incorporated into every lesson and every level.</p>
     </div>
     <div class="standard-item">
-      <div class="tag">02 — PERSONALIZED</div>
-      <h3>Personalized</h3>
-      <p>No two swimmers learn the same way. Every lesson is shaped around the person in front of us — their pace, comfort level, and goals — instead of a fixed curriculum. Lessons are available private, semi-private, or in small groups.</p>
+      <div class="tag">02 — MOVEMENT</div>
+      <h3>Movement</h3>
+      <p>Swimming is movement. Our teaching philosophy is informed by an understanding of body mechanics, coordination, motor learning, movement efficiency, and individual ability. We don't simply look at whether a swimmer completes a skill — we consider how they move through it.</p>
     </div>
     <div class="standard-item">
-      <div class="tag">03 — CONFIDENCE</div>
+      <div class="tag">03 — PERSONALIZATION</div>
+      <h3>Personalization</h3>
+      <p>No two swimmers learn exactly the same way. Lessons are adapted to the swimmer's ability, goals, comfort level, learning style, and progression. We meet swimmers where they are — and help them move forward.</p>
+    </div>
+    <div class="standard-item">
+      <div class="tag">04 — CONFIDENCE</div>
       <h3>Confidence</h3>
-      <p>We measure success by how safe and capable a swimmer feels, not just their stroke technique. Fear reduction and trust-building matter as much as skill — and every milestone, no matter how small, gets celebrated.</p>
+      <p>Skills matter. But believing you can use them matters too. We intentionally develop confidence alongside technique so swimmers become increasingly capable and independent in the water.</p>
     </div>
   </div>
+  <p class="standard-close">This isn't simply how we teach. It's The Beyond Standard.</p>
+  <div style="margin-top:1.6rem; text-align:center;"><a href="about.html" class="btn-ghost">Experience The Beyond Standard</a></div>
+</section>
+
+<section class="cta-band">
+  <h2>Ready to Go Beyond?</h2>
+  <p>Whether you're learning for the first time, building confidence, improving technique, or looking for a more individualized approach to the water, your journey has a place here. Let's find the right path for you.</p>
+  <div class="cta-buttons">
+    <a href="contact.html" class="btn-primary">Book Now</a>
+    <a href="contact.html" class="btn-ghost">Contact Us</a>
+  </div>
+  <p class="cta-contact">Email <a href="mailto:info@btwaquatics.com">info@btwaquatics.com</a> &middot; Instagram @beyondthewaves &middot; NYC &amp; Long Island</p>
 </section>
 
 <footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="logo"><img src="logo-mark.png" alt="Beyond the Waves Aquatics logo">Beyond the <span>Waves</span></div>
+      <p>Movement-Informed Swim Education for Every Age &amp; Ability.</p>
+      <p class="footer-location">NYC &amp; Long Island</p>
+    </div>
+    <div class="footer-links">
+      <a href="programs.html">Programs</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-social">
+      <span>Instagram: @beyondthewaves</span>
+      <a href="contact.html" class="btn-primary">Book Now</a>
+    </div>
+  </div>
   <div class="foot-bottom">
     <span>© 2026 Beyond the Waves Aquatics LLC</span>
     <span>Beyond the Waves, Beyond Limits.</span>

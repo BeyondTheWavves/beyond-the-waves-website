@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Classes — Beyond the Waves Aquatics</title>
+<title>Classes &amp; Curriculum — Beyond the Waves Aquatics</title>
+<meta name="description" content="Our movement-informed leveling system for kids, adults, and seniors — swim skills, safety skills, breathing skills, and movement focus at every level.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -52,7 +53,7 @@
   section{padding:5vw 6vw; scroll-margin-top:70px;}
   .section-head{max-width:60ch; margin-bottom:1rem;}
   .section-head h1{font-size:clamp(2rem,3.6vw,3rem); margin-top:8px;}
-  .section-head p{margin-top:1rem; font-size:0.96rem; color:var(--navy); opacity:0.85; max-width:60ch;}
+  .section-head p{margin-top:1rem; font-size:0.96rem; color:var(--navy); opacity:0.9; max-width:62ch;}
 
   .tabs{display:flex; gap:0.8rem; padding:0 6vw 2vw;}
   .tab-btn{font-family:'IBM Plex Mono',monospace; font-size:0.8rem; letter-spacing:0.05em; text-transform:uppercase; padding:11px 26px; border:1px solid var(--teal); background:var(--paper); color:var(--navy); border-radius:2px; cursor:pointer; transition:background 0.15s, color 0.15s;}
@@ -70,13 +71,10 @@
   .format-badge h3{font-size:1.1rem;}
 
   .class-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1.6rem; margin-bottom:1.6rem;}
-  .class-card{border:1px solid rgba(11,49,66,0.12); border-top:2px solid var(--teal); transition:transform 0.2s ease, box-shadow 0.2s ease;}
+  .class-card{border:1px solid rgba(11,49,66,0.12); border-top:2px solid var(--teal); padding:1.4rem; transition:transform 0.2s ease, box-shadow 0.2s ease;}
   .class-card:hover{transform:translateY(-4px); box-shadow:0 12px 28px rgba(11,49,66,0.08);}
-  .class-card-img{aspect-ratio:4/3; background:var(--sand); display:flex; align-items:center; justify-content:center; overflow:hidden;}
-  .class-card-img img{width:100%; height:100%; object-fit:cover; display:block;}
-  .class-card-img span{font-family:'IBM Plex Mono',monospace; font-size:0.65rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--teal); opacity:0.7;}
-  .class-card h3{font-size:1.2rem; padding:1.1rem 1.3rem 0.4rem;}
-  .class-card p{font-size:0.9rem; color:var(--navy); opacity:0.85; padding:0 1.3rem 1.3rem;}
+  .class-card h3{font-size:1.2rem; margin-bottom:0.4rem;}
+  .class-card p{font-size:0.9rem; color:var(--navy); opacity:0.85;}
 
   .level-card{border:1px solid rgba(11,49,66,0.12); border-top:2px solid var(--teal); padding:1.8rem; margin-bottom:1.6rem; transition:transform 0.2s ease, box-shadow 0.2s ease;}
   .level-card:hover{transform:translateY(-4px); box-shadow:0 12px 28px rgba(11,49,66,0.08);}
@@ -86,11 +84,33 @@
   .level-row:last-child{margin-bottom:0;}
   .level-row .label{font-family:'IBM Plex Mono',monospace; font-size:0.68rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--teal); display:block; margin-bottom:0.3rem;}
   .level-row p{font-size:0.92rem; color:var(--navy); opacity:0.9; margin:0;}
+  .level-row.movement-focus .label{color:var(--pink);}
 
   .coming-soon{text-align:center; padding:4vw 6vw 6vw; border:1px solid rgba(11,49,66,0.12); border-top:2px solid var(--teal); margin:0 6vw;}
   .coming-soon h3{font-size:1.7rem; margin-bottom:0.7rem;}
   .coming-soon p{font-size:0.95rem; color:var(--navy); opacity:0.85; max-width:50ch; margin:0 auto;}
   .coming-soon a{color:var(--teal); text-decoration:underline;}
+
+  .cta-band{background:var(--sand); border-top:2px solid var(--teal); text-align:center; padding:4vw 6vw;}
+  .cta-band h2{font-size:clamp(1.6rem,2.6vw,2.2rem);}
+  .cta-band p{max-width:60ch; margin:1rem auto 0; font-size:0.96rem; color:var(--navy); opacity:0.9;}
+  .cta-band .cta-buttons{display:flex; gap:14px; justify-content:center; margin-top:1.8rem; flex-wrap:wrap;}
+  .cta-band .cta-contact{margin-top:1.6rem; font-size:0.85rem; color:var(--navy); opacity:0.75;}
+  .cta-band .cta-contact a{text-decoration:underline; color:var(--teal);}
+  .btn-primary{background:var(--pink); color:var(--paper); font-weight:600; padding:13px 24px; border-radius:2px; font-size:0.9rem; display:inline-block; box-shadow:0 4px 14px rgba(239,93,168,0.28); transition:transform 0.18s ease, box-shadow 0.18s ease;}
+  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 8px 20px rgba(239,93,168,0.38);}
+  .btn-ghost{border:1px solid var(--teal); color:var(--navy); padding:13px 24px; border-radius:2px; font-size:0.9rem; display:inline-block; transition:background 0.18s ease, color 0.18s ease, transform 0.18s ease;}
+  .btn-ghost:hover{background:var(--teal); color:var(--paper); transform:translateY(-2px);}
+
+  .footer-top{display:flex; flex-wrap:wrap; justify-content:space-between; gap:2rem; padding-bottom:2rem; margin-bottom:1.6rem; border-bottom:1px solid rgba(11,49,66,0.1);}
+  .footer-brand .logo{margin-bottom:0.7rem;}
+  .footer-brand p{font-size:0.85rem; color:var(--navy); opacity:0.75; max-width:32ch;}
+  .footer-brand .footer-location{font-family:'IBM Plex Mono',monospace; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--teal); opacity:1; margin-top:0.6rem;}
+  .footer-links{display:flex; flex-direction:column; gap:0.5rem; font-size:0.88rem;}
+  .footer-links a:hover{color:var(--teal);}
+  .footer-social{display:flex; flex-direction:column; align-items:flex-start; gap:0.9rem;}
+  .footer-social span{font-size:0.85rem; color:var(--navy);}
+  .footer-social .btn-primary{padding:10px 20px; font-size:0.82rem;}
 
   footer{color:var(--navy); padding:3vw 6vw 2vw; border-top:2px solid var(--teal);}
   .foot-bottom{display:flex; justify-content:space-between; font-size:0.78rem; flex-wrap:wrap; gap:8px;}
@@ -104,6 +124,8 @@
     .tab-btn{padding:10px 20px; font-size:0.75rem;}
     .class-grid{grid-template-columns:1fr;}
     .format-grid{grid-template-columns:1fr;}
+    .cta-band .cta-buttons{flex-direction:column; align-items:center;}
+    .footer-top{flex-direction:column;}
   }
 </style>
 </head>
@@ -136,11 +158,12 @@
     <a href="programs.html">Programs</a>
     <a href="classes.html" aria-current="page">Classes</a>
     <a href="pricing.html">Pricing</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="testimonials.html">Testimonials &amp; FAQs</a>
+    <a href="team.html">Our Team</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
   </div>
   <div class="nav-right">
-    <a href="contact.html" class="navcta">Book a Lesson</a>
+    <a href="contact.html" class="navcta">Book Now</a>
     <button class="burger" id="burgerBtn" aria-label="Menu" aria-expanded="false" aria-controls="navlinks" onclick="toggleMenu()">
       <span></span><span></span><span></span>
     </button>
@@ -149,9 +172,9 @@
 
 <section id="classes-intro">
   <div class="section-head">
-    <div class="eyebrow">Classes</div>
-    <h1>Classes</h1>
-    <p>Every age. Every ability. Every swimmer belongs.</p>
+    <div class="eyebrow">Classes &amp; Curriculum</div>
+    <h1>Progress With Purpose.</h1>
+    <p>Every skill in our curriculum has a reason. Our progression considers not only what a swimmer can perform, but how they move through each skill. By developing safety, breathing, technique, body awareness, coordination, and confidence together, we help swimmers build skills that last.</p>
   </div>
 </section>
 
@@ -164,7 +187,7 @@
 <section id="kids-track" class="track-panel" role="tabpanel" aria-labelledby="tab-kids">
   <div class="track-head">
     <h2>Our Leveling System</h2>
-    <p>Every swimmer moves through a structured set of levels, each one building on the last — real technique, real safety skills, and real confidence in the water, one milestone at a time.</p>
+    <p>Every swimmer moves through a structured set of levels, each one building on the last — real technique, real safety skills, real breathing skills, and real movement, one milestone at a time.</p>
   </div>
 
   <div class="format-grid">
@@ -178,6 +201,7 @@
     <div class="level-row"><span class="label">Core Drills</span><p>Entry/exit practice using pool steps or ladder; "egg crack" game pouring water on head; assisted bobs with instructor support at hip.</p></div>
     <div class="level-row"><span class="label">Safety Skill</span><p>Practice reaching for the wall or instructor's hands on command ("reach!") during play, so it becomes automatic.</p></div>
     <div class="level-row"><span class="label">Breathing Skill</span><p>Bubble-blowing practice above water first, then chin at water level, then full face submerged, using a floating toy as a target.</p></div>
+    <div class="level-row movement-focus"><span class="label">Movement Focus</span><p>Body awareness — learning how the body feels moving through water for the first time.</p></div>
   </div>
 
   <div class="level-card">
@@ -185,6 +209,7 @@
     <div class="level-row"><span class="label">Core Drills</span><p>Front float with instructor support progressing to two-finger support; back float with support under head/shoulders; kickboard kicking 3–5 meters; "treasure hunt" for submersion comfort.</p></div>
     <div class="level-row"><span class="label">Safety Skill</span><p>Practice rolling from front float to back float with instructor assistance — the foundational self-rescue position.</p></div>
     <div class="level-row"><span class="label">Breathing Skill</span><p>Rhythmic bubble-blowing while fully submerged for 3–5 seconds, building duration gradually.</p></div>
+    <div class="level-row movement-focus"><span class="label">Movement Focus</span><p>Alignment and buoyancy — learning to trust the water to support the body.</p></div>
   </div>
 
   <div class="level-card">
@@ -192,6 +217,7 @@
     <div class="level-row"><span class="label">Core Drills</span><p>Streamline push-offs from the wall with a glide; freestyle arm circles with flutter kick; independent jump-in with return-to-wall practice; 5-meter freestyle attempts with minimal support.</p></div>
     <div class="level-row"><span class="label">Safety Skill</span><p>Practice calling out ("Help!") and swimming/walking to the nearest exit point from various points in the shallow end.</p></div>
     <div class="level-row"><span class="label">Breathing Skill</span><p>Basic rhythm of exhaling underwater, lifting head to inhale, re-submerging — practiced at the wall, then while kicking.</p></div>
+    <div class="level-row movement-focus"><span class="label">Movement Focus</span><p>Coordination — connecting arms and legs into one continuous movement.</p></div>
   </div>
 
   <div class="level-card">
@@ -199,6 +225,7 @@
     <div class="level-row"><span class="label">Core Drills</span><p>Side-breathing drill turning head every 3rd stroke; backstroke arm circles from a supported back float; treading water at the wall up to 10–15 seconds; deep-water comfort exercises with flotation support.</p></div>
     <div class="level-row"><span class="label">Safety Skill</span><p>Tread water for short bursts within arm's reach of the wall, reinforcing the wall as a "safety base."</p></div>
     <div class="level-row"><span class="label">Breathing Skill</span><p>Side-breathing coordinated with the freestyle stroke using a kickboard to isolate the breathing side.</p></div>
+    <div class="level-row movement-focus"><span class="label">Movement Focus</span><p>Rotation and timing — coordinating breath with body rotation.</p></div>
   </div>
 
   <div class="level-card">
@@ -206,6 +233,7 @@
     <div class="level-row"><span class="label">Core Drills</span><p>Breaststroke kick introduced on dry land, then with a kickboard; 25m freestyle attempts; backstroke refinement; treading water building to 30+ seconds.</p></div>
     <div class="level-row"><span class="label">Safety Skill</span><p>"Swim-float-swim" sequence — swim, roll to a back float to rest, resume swimming.</p></div>
     <div class="level-row"><span class="label">Breathing Skill</span><p>Bilateral breathing introduced — every 3 strokes, alternating sides.</p></div>
+    <div class="level-row movement-focus"><span class="label">Movement Focus</span><p>Bilateral coordination — building rhythm across multiple strokes.</p></div>
   </div>
 
   <div class="level-card">
@@ -213,6 +241,7 @@
     <div class="level-row"><span class="label">Core Drills</span><p>Butterfly introduction with dolphin kick, then arm motion; dive entry practice; 50m continuous swim sets mixing strokes; open turn practice at the wall.</p></div>
     <div class="level-row"><span class="label">Safety Skill</span><p>Reach-or-throw assist scenario using a pool noodle or kickboard without entering the water.</p></div>
     <div class="level-row"><span class="label">Breathing Skill</span><p>Controlled breathing during wall turns, exhaling fully before pushing off.</p></div>
+    <div class="level-row movement-focus"><span class="label">Movement Focus</span><p>Movement efficiency — reducing drag and wasted motion across all strokes.</p></div>
   </div>
 
   <div class="level-card">
@@ -220,13 +249,14 @@
     <div class="level-row"><span class="label">Core Drills</span><p>Flip turn practice broken into steps; race-pace interval sets (e.g., 4x25m); racing dive start practice; endurance sets with minimal rest.</p></div>
     <div class="level-row"><span class="label">Safety Skill</span><p>Recognizing signs of a swimmer in distress and the correct response (alert a lifeguard/adult, do not enter the water alone).</p></div>
     <div class="level-row"><span class="label">Breathing Skill</span><p>Race-pace breath control, breathing every 4–5 strokes to build lung efficiency.</p></div>
+    <div class="level-row movement-focus"><span class="label">Movement Focus</span><p>Power and endurance — refining force production and stamina under race conditions.</p></div>
   </div>
 </section>
 
 <section id="adults-track" class="track-panel" role="tabpanel" aria-labelledby="tab-adults" style="display:none;">
   <div class="track-head">
     <h2>Our Leveling System</h2>
-    <p>Every swimmer moves through a structured set of levels, each one building on the last — real technique, real safety skills, and real confidence in the water, one milestone at a time.</p>
+    <p>Every swimmer moves through a structured set of levels, each one building on the last — real technique, real safety skills, real breathing skills, and real movement, one milestone at a time.</p>
   </div>
 
   <div class="format-grid">
@@ -237,38 +267,60 @@
 
   <div class="coming-soon">
     <h3>Coming Soon</h3>
-    <p>We're putting the finishing touches on our Adult Track curriculum. Check back soon, or <a href="contact.html">reach out to us</a> directly with questions about adult lessons.</p>
+    <p>We're putting the finishing touches on our Adult Track curriculum. Not sure what level to start at? <a href="contact.html">Contact us</a> and we'll help you find the right starting point.</p>
   </div>
 </section>
 
 <section id="seniors-track" class="track-panel" role="tabpanel" aria-labelledby="tab-seniors" style="display:none;">
   <div class="track-head">
     <h2>Senior Classes</h2>
-    <p>Low-impact, supportive classes designed for older adults — building strength, balance, and confidence in the water at a pace that feels right for you.</p>
+    <p>Confidence and movement at every stage — low-impact, supportive classes designed for older adults, building strength, balance, and confidence in the water at a pace that feels right for you.</p>
   </div>
 
   <div class="class-grid">
     <div class="class-card">
-      <div class="class-card-img"><span>Image Placeholder</span></div>
       <h3>Water Aerobics</h3>
       <p>A low-impact, full-body workout designed to improve cardiovascular health, strength, flexibility, and endurance through water-based exercise.</p>
     </div>
 
     <div class="class-card">
-      <div class="class-card-img"><span>Image Placeholder</span></div>
       <h3>Aqua Balance &amp; Mobility</h3>
       <p>A gentle aquatic class focused on improving balance, mobility, coordination, and functional strength in a supportive, low-impact environment.</p>
     </div>
 
     <div class="class-card">
-      <div class="class-card-img"><span>Image Placeholder</span></div>
       <h3>Senior Swim &amp; Water Confidence</h3>
       <p>Personalized swim instruction designed to build water safety skills, swimming ability, confidence, and independence for older adults of all experience levels.</p>
     </div>
   </div>
 </section>
 
+<section class="cta-band">
+  <h2>Not Sure What Level to Start At?</h2>
+  <p>Every swimmer has a starting point. Tell us a little about yours and we'll help you find the right level.</p>
+  <div class="cta-buttons">
+    <a href="contact.html" class="btn-primary">Contact Us</a>
+    <a href="contact.html" class="btn-ghost">Book Now</a>
+  </div>
+  <p class="cta-contact">Email <a href="mailto:info@btwaquatics.com">info@btwaquatics.com</a> &middot; Instagram @beyondthewaves &middot; NYC &amp; Long Island</p>
+</section>
+
 <footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="logo"><img src="logo-mark.png" alt="Beyond the Waves Aquatics logo">Beyond the <span>Waves</span></div>
+      <p>Movement-Informed Swim Education for Every Age &amp; Ability.</p>
+      <p class="footer-location">NYC &amp; Long Island</p>
+    </div>
+    <div class="footer-links">
+      <a href="programs.html">Programs</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-social">
+      <span>Instagram: @beyondthewaves</span>
+      <a href="contact.html" class="btn-primary">Book Now</a>
+    </div>
+  </div>
   <div class="foot-bottom">
     <span>© 2026 Beyond the Waves Aquatics LLC</span>
     <span>Beyond the Waves, Beyond Limits.</span>
