@@ -153,11 +153,11 @@
       </div>
       <div class="form-group"><label>Primary Goal</label><input type="text" name="goal" placeholder="e.g. overcome fear, learn to swim, improve technique"></div>
       <div class="form-group"><label>Program of Interest</label>
-        <select name="program"><option>Private Lessons</option><option>Semi-Private Lessons</option><option>Group Lessons</option><option>Adult Swim</option><option>Adaptive Aquatics</option><option>Stroke Development</option><option>Senior Aquatics</option><option>Not sure yet</option></select>
+        <select name="program" id="programSelect"><option>Private Lessons</option><option>Semi-Private Lessons</option><option>Group Lessons</option><option>Infant Swim</option><option>Adult Swim</option><option>Adaptive Aquatics</option><option>Stroke Development</option><option>Senior Aquatics</option><option>Not sure yet</option></select>
       </div>
       <div class="form-group"><label>Preferred Location</label><input type="text" name="location" placeholder="NYC or Long Island"></div>
       <div class="form-group"><label>Preferred Days/Times</label><input type="text" name="preferred_times"></div>
-      <div class="form-group"><label>Anything Else We Should Know?</label><textarea name="message" rows="4"></textarea></div>
+      <div class="form-group"><label>Anything Else We Should Know?</label><textarea name="message" id="messageField" rows="4"></textarea></div>
       <button class="submit-btn" type="submit">Let's Make Waves</button>
     </form>
     <div class="contact-info">
@@ -207,6 +207,29 @@
       document.getElementById('burgerBtn').setAttribute('aria-expanded', 'false');
     }
   });
+
+  (function(){
+    var params = new URLSearchParams(window.location.search);
+    var programParam = params.get('program');
+    var noteParam = params.get('note');
+    if (programParam){
+      var select = document.getElementById('programSelect');
+      if (select){
+        for (var i = 0; i < select.options.length; i++){
+          if (select.options[i].text === programParam){
+            select.selectedIndex = i;
+            break;
+          }
+        }
+      }
+    }
+    if (noteParam){
+      var msg = document.getElementById('messageField');
+      if (msg && !msg.value){
+        msg.value = 'Interested in: ' + noteParam;
+      }
+    }
+  })();
 </script>
 
 </body>
