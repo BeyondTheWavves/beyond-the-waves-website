@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find Your Class — Beyond the Waves Aquatics</title>
+<meta name="description" content="Answer a few quick questions and we'll match you with the right Beyond the Waves class and level to start with.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0B3142;
+    --teal:#1FB2AE;
+    --tile:#2C5F7C;
+    --pink:#EF5DA8;
+    --sand:#F3FAFA;
+    --paper:#FFFFFF;
+    --ink:#0B3142;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{position:relative; background:var(--paper); color:var(--ink); font-family:'Work Sans', sans-serif; line-height:1.6;}
+  h1,h2,h3{font-family:'Instrument Serif', serif; font-weight:400;}
+  h1,h2,h3,h4{color:var(--pink);}
+  .eyebrow{font-family:'IBM Plex Mono', monospace; font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--teal);}
+  a{color:inherit; text-decoration:none; transition:color 0.15s ease;}
+  :focus-visible{outline:2px solid var(--teal); outline-offset:2px;}
+
+  /* Decorative wave bands — soft navy & teal wave crests spanning the top and bottom of the page */
+  .wave-band{position:absolute; left:0; width:100%; z-index:-1; pointer-events:none; overflow:hidden;}
+  .wave-band svg{display:block; width:100%; height:100%;}
+  .wave-band.top{top:0; height:150px;}
+  .wave-band.bottom{bottom:0; height:150px;}
+  .wave-band.bottom svg{transform:scaleY(-1);}
+
+  nav{display:flex; justify-content:space-between; align-items:center; padding:20px 6vw; position:sticky; top:0; z-index:50; background:rgba(255,255,255,0.9); backdrop-filter:blur(6px); border-bottom:1px solid rgba(31,178,174,0.25); box-shadow:0 2px 20px rgba(11,49,66,0.05); flex-wrap:wrap; gap:12px;}
+  .logo{font-family:'Instrument Serif', serif; font-size:1.3rem; color:var(--navy); display:flex; align-items:center; gap:0.5rem;}
+  .logo img{height:40px; width:auto; display:block;}
+  .logo span{color:var(--pink); font-style:italic;}
+  .navlinks{display:flex; gap:1.6rem; font-size:0.88rem; flex-wrap:wrap;}
+  .navlinks a{color:var(--navy);}
+  .navlinks a:hover{color:var(--teal);}
+  .nav-right{display:flex; align-items:center; gap:14px;}
+  .burger{display:none; flex-direction:column; justify-content:space-between; width:24px; height:18px; background:none; border:none; padding:0; cursor:pointer;}
+  .burger span{display:block; height:2px; width:100%; background:var(--navy); border-radius:2px; transition:transform 0.2s ease, opacity 0.2s ease;}
+  .burger.open span:nth-child(1){transform:translateY(8px) rotate(45deg);}
+  .burger.open span:nth-child(2){opacity:0;}
+  .burger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
+
+  section{padding:5vw 6vw; scroll-margin-top:70px;}
+  .section-head{max-width:62ch; margin-bottom:0.4rem;}
+  .section-head h1{font-size:clamp(2rem,3.6vw,2.8rem); margin-top:8px;}
+  .section-head p{margin-top:1rem; font-size:0.96rem; color:var(--navy); opacity:0.9; max-width:62ch;}
+  .browse-link{font-size:0.85rem; margin-top:0.8rem; display:inline-block;}
+  .browse-link a{color:var(--teal); text-decoration:underline;}
+
+  .quiz-wrap{max-width:640px; margin:0 auto; padding:1vw 6vw 6vw;}
+  .quiz-progress{font-family:'IBM Plex Mono',monospace; font-size:0.7rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--teal); margin-bottom:1.6rem;}
+  .quiz-step{display:none;}
+  .quiz-step.active{display:block;}
+  .quiz-step h2{font-size:1.5rem; margin-bottom:0.5rem;}
+  .quiz-step .step-note{font-size:0.88rem; color:var(--navy); opacity:0.8; margin-bottom:1.6rem; max-width:56ch;}
+
+  .option-list{display:flex; flex-direction:column; gap:0.8rem;}
+  .option-btn{text-align:left; width:100%; border:1px solid rgba(11,49,66,0.2); border-radius:6px; padding:1rem 1.2rem; background:var(--paper); color:var(--navy); font-family:'Work Sans',sans-serif; font-size:0.95rem; cursor:pointer; transition:border-color 0.15s ease, background 0.15s ease, transform 0.15s ease;}
+  .option-btn:hover{border-color:var(--teal); background:rgba(31,178,174,0.06); transform:translateY(-2px);}
+
+  .skill-list{display:flex; flex-direction:column; gap:0.7rem; margin-bottom:1.8rem;}
+  .skill-option{display:flex; align-items:flex-start; gap:0.8rem; border:1px solid rgba(11,49,66,0.15); border-radius:6px; padding:0.9rem 1.1rem; cursor:pointer; transition:border-color 0.15s ease, background 0.15s ease;}
+  .skill-option:hover{border-color:var(--teal); background:rgba(31,178,174,0.05);}
+  .skill-option input{margin-top:3px; width:16px; height:16px; accent-color:var(--teal); flex-shrink:0;}
+  .skill-option span{font-size:0.92rem; color:var(--navy);}
+
+  .day-one-note{border-left:3px solid var(--teal); padding-left:1rem; margin-bottom:1.6rem; font-size:0.85rem; color:var(--navy); opacity:0.85; max-width:56ch;}
+
+  .step-actions{display:flex; gap:12px; margin-top:0.4rem; flex-wrap:wrap;}
+  .btn-primary{background:var(--pink); color:var(--paper); font-weight:600; padding:13px 24px; border:none; border-radius:2px; font-size:0.9rem; display:inline-block; cursor:pointer; box-shadow:0 4px 14px rgba(239,93,168,0.28); transition:transform 0.18s ease, box-shadow 0.18s ease;}
+  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 8px 20px rgba(239,93,168,0.38);}
+  .btn-ghost{border:1px solid var(--teal); color:var(--navy); background:var(--paper); padding:13px 24px; border-radius:2px; font-size:0.9rem; display:inline-block; cursor:pointer; transition:background 0.18s ease, color 0.18s ease, transform 0.18s ease;}
+  .btn-ghost:hover{background:var(--teal); color:var(--paper); transform:translateY(-2px);}
+  .back-link{font-size:0.85rem; color:var(--navy); opacity:0.7; cursor:pointer; display:inline-block; margin-bottom:1.2rem;}
+  .back-link:hover{opacity:1; color:var(--teal);}
+
+  .result-card{border:1px solid rgba(11,49,66,0.15); border-top:3px solid var(--teal); border-radius:8px; padding:2rem; text-align:center; background:var(--sand);}
+  .result-card .eyebrow{display:block; margin-bottom:0.4rem;}
+  .result-card h2{font-size:1.8rem; margin-bottom:0.6rem;}
+  .result-card p{font-size:0.95rem; color:var(--navy); opacity:0.9; max-width:52ch; margin:0 auto;}
+  .result-actions{display:flex; gap:14px; justify-content:center; margin-top:1.8rem; flex-wrap:wrap;}
+  .result-day-one{margin-top:1.6rem; font-size:0.84rem; color:var(--navy); opacity:0.75; max-width:52ch; margin-left:auto; margin-right:auto;}
+  .retake{margin-top:1.4rem; font-size:0.85rem; color:var(--navy); opacity:0.7; cursor:pointer; display:inline-block;}
+  .retake:hover{opacity:1; color:var(--teal);}
+
+  .cta-band{background:var(--sand); border-top:2px solid var(--teal); text-align:center; padding:4vw 6vw;}
+  .cta-band h2{font-size:clamp(1.6rem,2.6vw,2.2rem);}
+  .cta-band p{max-width:60ch; margin:1rem auto 0; font-size:0.96rem; color:var(--navy); opacity:0.9;}
+  .cta-band .cta-contact{margin-top:1.6rem; font-size:0.85rem; color:var(--navy); opacity:0.75;}
+  .cta-band .cta-contact a{text-decoration:underline; color:var(--teal);}
+
+  .footer-top{display:flex; flex-wrap:wrap; justify-content:space-between; gap:2rem; padding-bottom:2rem; margin-bottom:1.6rem; border-bottom:1px solid rgba(11,49,66,0.1);}
+  .footer-brand .logo{margin-bottom:0.7rem;}
+  .footer-brand p{font-size:0.85rem; color:var(--navy); opacity:0.75; max-width:32ch;}
+  .footer-brand .footer-location{font-family:'IBM Plex Mono',monospace; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--teal); opacity:1; margin-top:0.6rem;}
+  .footer-links{display:flex; flex-direction:column; gap:0.5rem; font-size:0.88rem;}
+  .footer-links a:hover{color:var(--teal);}
+  .footer-social{display:flex; flex-direction:column; align-items:flex-start; gap:0.9rem;}
+  .footer-social span{font-size:0.85rem; color:var(--navy);}
+  .footer-social .btn-primary{padding:10px 20px; font-size:0.82rem;}
+
+  footer{color:var(--navy); padding:3vw 6vw 2vw; border-top:2px solid var(--teal);}
+  .foot-bottom{display:flex; justify-content:space-between; font-size:0.78rem; flex-wrap:wrap; gap:8px;}
+
+  @media (max-width:820px){
+    .navlinks{display:none;}
+    .navlinks.open{display:flex; flex-direction:column; position:absolute; top:100%; left:0; right:0; background:var(--paper); padding:1.4rem 6vw 1.8rem; gap:1rem; border-bottom:1px solid rgba(31,178,174,0.25); box-shadow:0 12px 20px rgba(11,49,66,0.08);}
+    .burger{display:flex;}
+    .wave-band{height:80px;}
+    .result-card{padding:1.6rem;}
+    .footer-top{flex-direction:column;}
+  }
+</style>
+</head>
+<body>
+
+<svg style="position:absolute; width:0; height:0;" aria-hidden="true">
+  <defs>
+    <path id="wave-band-back" d="M0,90 C60,50 180,130 240,90 C300,50 420,130 480,90 C540,50 660,130 720,90 C780,50 900,130 960,90 C1020,50 1140,130 1200,90 C1260,50 1380,130 1440,90 L1440,0 L0,0 Z"/>
+    <path id="wave-band-front" d="M0,130 C60,165 180,95 240,130 C300,165 420,95 480,130 C540,165 660,95 720,130 C780,165 900,95 960,130 C1020,165 1140,95 1200,130 C1260,165 1380,95 1440,130 L1440,0 L0,0 Z"/>
+  </defs>
+</svg>
+<div class="wave-band top" aria-hidden="true">
+  <svg viewBox="0 0 1440 220" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <use href="#wave-band-back" fill="#0B3142" fill-opacity="0.5"/>
+    <use href="#wave-band-front" fill="#1FB2AE" fill-opacity="0.45"/>
+  </svg>
+</div>
+<div class="wave-band bottom" aria-hidden="true">
+  <svg viewBox="0 0 1440 220" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <use href="#wave-band-back" fill="#0B3142" fill-opacity="0.5"/>
+    <use href="#wave-band-front" fill="#1FB2AE" fill-opacity="0.45"/>
+  </svg>
+</div>
+
+<nav>
+  <a href="index.html" class="logo"><img src="logo-mark.png" alt="Beyond the Waves Aquatics logo">Beyond the <span>Waves</span></a>
+  <div class="navlinks" id="navlinks">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="programs.html">Programs</a>
+    <a href="classes.html">Classes</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="team.html">Our Team</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="nav-right">
+    <a href="contact.html" class="navcta" style="background:var(--navy); color:var(--paper); padding:9px 18px; border-radius:2px; font-size:0.82rem; box-shadow:0 4px 14px rgba(11,49,66,0.22);">Book Now</a>
+    <button class="burger" id="burgerBtn" aria-label="Menu" aria-expanded="false" aria-controls="navlinks" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<section id="quiz-intro">
+  <div class="section-head">
+    <div class="eyebrow">Find Your Class</div>
+    <h1>Let's Find Your Match.</h1>
+    <p>Answer a few quick questions and we'll match you with the class built around how your swimmer moves today.</p>
+    <div class="browse-link">Prefer to browse instead? <a href="programs.html">View all programs</a></div>
+  </div>
+</section>
+
+<div class="quiz-wrap">
+  <div class="quiz-progress" id="quizProgress">Step 1 of 3</div>
+
+  <!-- STEP: WHO -->
+  <div class="quiz-step active" id="step-who">
+    <h2>Who are the classes for?</h2>
+    <p class="step-note">This helps us point you toward the right age group and program.</p>
+    <div class="option-list">
+      <button class="option-btn" onclick="selectWho('infants')">An infant (0–2 years)</button>
+      <button class="option-btn" onclick="selectWho('kids')">A child (3–12 years)</button>
+      <button class="option-btn" onclick="selectWho('teens-adults')">A teen or adult (13+)</button>
+      <button class="option-btn" onclick="selectWho('seniors')">An older adult / senior</button>
+      <button class="option-btn" onclick="selectWho('adaptive')">A swimmer with a disability or additional needs (any age)</button>
+    </div>
+  </div>
+
+  <!-- STEP: INFANT FOCUS -->
+  <div class="quiz-step" id="step-infant-focus">
+    <span class="back-link" onclick="goTo('step-who')">&larr; Back</span>
+    <h2>What would you like to focus on?</h2>
+    <div class="option-list">
+      <button class="option-btn" onclick="selectFlat('infants','Infants','Baby and Me')">Bonding and comfort in the water together</button>
+      <button class="option-btn" onclick="selectFlat('infants','Infants','Water Safety')">Foundational water safety skills</button>
+    </div>
+  </div>
+
+  <!-- STEP: SENIOR FOCUS -->
+  <div class="quiz-step" id="step-senior-focus">
+    <span class="back-link" onclick="goTo('step-who')">&larr; Back</span>
+    <h2>What would you like to focus on?</h2>
+    <div class="option-list">
+      <button class="option-btn" onclick="selectFlat('seniors','Seniors','Water Aerobics')">General fitness and low-impact movement</button>
+      <button class="option-btn" onclick="selectFlat('seniors','Seniors','Aqua Balance &amp; Mobility')">Balance and mobility</button>
+      <button class="option-btn" onclick="selectFlat('seniors','Seniors','Senior Swim &amp; Water Confidence')">Learning to swim or building water confidence</button>
+    </div>
+  </div>
+
+  <!-- STEP: GOAL (kids / teens-adults / adaptive) -->
+  <div class="quiz-step" id="step-goal">
+    <span class="back-link" onclick="goTo('step-who')">&larr; Back</span>
+    <h2>What's the main goal?</h2>
+    <div class="option-list">
+      <button class="option-btn" onclick="selectGoal('levels')">Learn to swim, or keep building foundational skills</button>
+      <button class="option-btn" onclick="selectGoal('stroke')">Already swims independently and wants to refine a specific stroke</button>
+    </div>
+  </div>
+
+  <!-- STEP: STROKE PICK -->
+  <div class="quiz-step" id="step-stroke-pick">
+    <span class="back-link" onclick="goTo('step-goal')">&larr; Back</span>
+    <h2>Which stroke would you like to focus on?</h2>
+    <div class="option-list">
+      <button class="option-btn" onclick="selectStroke('Freestyle')">Freestyle</button>
+      <button class="option-btn" onclick="selectStroke('Backstroke')">Backstroke</button>
+      <button class="option-btn" onclick="selectStroke('Butterfly')">Butterfly</button>
+      <button class="option-btn" onclick="selectStroke('Breaststroke')">Breaststroke</button>
+      <button class="option-btn" onclick="selectStroke('Speed &amp; Endurance')">Speed &amp; Endurance</button>
+      <button class="option-btn" onclick="selectStroke('Flips &amp; Turns')">Flips &amp; Turns</button>
+    </div>
+  </div>
+
+  <!-- STEP: SKILLS CHECKLIST -->
+  <div class="quiz-step" id="step-skills">
+    <span class="back-link" onclick="goTo('step-goal')">&larr; Back</span>
+    <h2>Check every skill your swimmer can already do comfortably.</h2>
+    <p class="step-note">Choose every skill that already feels easy for them — no need to guess or round up.</p>
+    <div class="skill-list" id="skillList"></div>
+    <div class="day-one-note">Not sure, or somewhere in between? That's completely normal — every swimmer is tested on their first lesson to confirm the right skill level, so this is just a starting estimate.</div>
+    <div class="step-actions">
+      <button class="btn-primary" onclick="computeLevelResult()">See My Match</button>
+    </div>
+  </div>
+
+  <!-- STEP: FORMAT PREFERENCE -->
+  <div class="quiz-step" id="step-format">
+    <h2>Do you have a format preference?</h2>
+    <p class="step-note">This is optional — it just helps us tailor your recommendation.</p>
+    <div class="option-list">
+      <button class="option-btn" onclick="selectFormat('Private')">Private (1-on-1)</button>
+      <button class="option-btn" onclick="selectFormat('Semi-Private')">Semi-Private (with a sibling or friend)</button>
+      <button class="option-btn" onclick="selectFormat('Group')">Group</button>
+      <button class="option-btn" onclick="selectFormat('')">No preference yet</button>
+    </div>
+  </div>
+
+  <!-- STEP: RESULTS -->
+  <div class="quiz-step" id="step-results">
+    <div class="result-card">
+      <span class="eyebrow" id="resultEyebrow">Your Match</span>
+      <h2 id="resultTitle"></h2>
+      <p id="resultDesc"></p>
+      <p class="result-day-one">Every swimmer is tested on their first lesson to confirm placement — this match gives us a starting point, not a final assessment.</p>
+      <div class="result-actions">
+        <a href="#" id="resultBookBtn" class="btn-primary">Book This Class</a>
+        <a href="contact.html" class="btn-ghost">Ask a Question First</a>
+      </div>
+    </div>
+    <div style="text-align:center;"><span class="retake" onclick="restartQuiz()">&#8635; Retake the Quiz</span></div>
+  </div>
+</div>
+
+<section class="cta-band">
+  <h2>Ready to Go Beyond?</h2>
+  <p>Whatever brings you to the water, we're ready to meet you where you are.</p>
+  <p class="cta-contact">Email <a href="mailto:info@btwaquatics.com">info@btwaquatics.com</a> &middot; Instagram @beyondthewaves &middot; NYC &amp; Long Island</p>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="logo"><img src="logo-mark.png" alt="Beyond the Waves Aquatics logo">Beyond the <span>Waves</span></div>
+      <p>Movement-Informed Swim Education for Every Age &amp; Ability.</p>
+      <p class="footer-location">NYC &amp; Long Island</p>
+    </div>
+    <div class="footer-links">
+      <a href="programs.html">Programs</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-social">
+      <span>Instagram: @beyondthewaves</span>
+      <a href="contact.html" class="btn-primary">Book Now</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Beyond the Waves Aquatics LLC</span>
+    <span>Beyond the Waves, Beyond Limits.</span>
+  </div>
+</footer>
+
+<script>
+  // ---------- state ----------
+  var state = { track: null, category: null, format: null };
+
+  var trackLabels = {
+    infants: 'Infants',
+    kids: 'Kids',
+    'teens-adults': 'Teens & Adults',
+    seniors: 'Seniors',
+    adaptive: 'Adaptive Aquatics',
+    stroke: 'Stroke Development'
+  };
+
+  var entryLevel = {
+    kids: 'Water Safety',
+    'teens-adults': 'Water Acclimation',
+    adaptive: 'Water Safety'
+  };
+
+  // Skill ladders — ordered easiest to hardest. Matching the highest checked skill = the matched level.
+  var skillData = {
+    kids: [
+      { level: 1, label: "Comfortable getting in and out of the pool and putting their face in the water." },
+      { level: 2, label: "Can float on their front or back with support and kick with a kickboard." },
+      { level: 3, label: "Can push off the wall, glide, and swim a short distance independently." },
+      { level: 4, label: "Can swim freestyle with side-breathing and tread water briefly at the wall." },
+      { level: 5, label: "Can swim 25 meters of freestyle and tread water for 30+ seconds." },
+      { level: 6, label: "Can swim multiple strokes continuously, including an introduction to butterfly." },
+      { level: 7, label: "Can swim competitively, including flip turns and race-pace sets." }
+    ],
+    'teens-adults': [
+      { level: 1, label: "Comfortable putting my face in the water and blowing bubbles." },
+      { level: 2, label: "Can float on my front or back and kick with a kickboard." },
+      { level: 3, label: "Can swim freestyle for a short distance with rhythmic breathing." },
+      { level: 4, label: "Can swim freestyle continuously with side-breathing and tread water." },
+      { level: 5, label: "Can swim multiple strokes confidently over longer distances." }
+    ],
+    adaptive: [
+      { level: 1, label: "Comfortable getting in and out of the pool and putting their face in the water, with support as needed." },
+      { level: 2, label: "Can float with support and kick with a kickboard." },
+      { level: 3, label: "Can push off the wall and move through the water with guidance." },
+      { level: 4, label: "Can swim short distances with side-breathing support." },
+      { level: 5, label: "Can swim independently with an introduction to additional strokes." },
+      { level: 6, label: "Can swim multiple strokes with growing independence." },
+      { level: 7, label: "Can swim confidently and independently across multiple strokes." }
+    ]
+  };
+
+  // Result descriptions — reused from programs.html for consistency across the site.
+  var resultData = {
+    'infants|Baby and Me': "A parent-and-child class built around movement, connection, and trust. Guided by an understanding of early motor development, every activity introduces babies to the water through purposeful, developmentally paced movement.",
+    'infants|Water Safety': "Foundational safety habits introduced through movement — floating, breath control, and body awareness — built around how young swimmers naturally learn to move.",
+    'seniors|Water Aerobics': "A low-impact, full-body class built around functional movement — improving cardiovascular health, strength, and flexibility through water-based exercise.",
+    'seniors|Aqua Balance & Mobility': "A gentle class focused on the movement fundamentals of balance, coordination, and mobility, in a supportive, low-impact environment.",
+    'seniors|Senior Swim & Water Confidence': "Personalized instruction built around movement and body awareness — developing water safety skills, swimming ability, and lasting confidence.",
+    'kids|Water Safety': "The foundation for every swimmer — safety skills built through movement awareness, wall orientation, and the coordination needed to respond with confidence in the water.",
+    'kids|Level 1': "An introduction to movement in the water — supported entries, breath control, and the body awareness behind a swimmer's very first strokes.",
+    'kids|Level 2': "Developing buoyancy and alignment as swimmers learn to trust the water to support the body — the coordination behind floating and kicking.",
+    'kids|Level 3': "Connecting arm, leg, and breath into one continuous movement — the coordination foundation behind independent freestyle.",
+    'kids|Level 4': "Refining rotation and timing through side-breathing and backstroke, while building the endurance to move with control in deeper water.",
+    'kids|Level 5': "Introducing bilateral breathing and breaststroke mechanics, building the coordination to move efficiently across multiple strokes.",
+    'kids|Level 6': "Expanding stroke range with butterfly and dive mechanics, refining the timing and efficiency behind every movement.",
+    'kids|Level 7': "Advanced technique and conditioning — refining power, endurance, and movement efficiency for swimmers ready to compete or perform at their best.",
+    'teens-adults|Water Acclimation': "A judgment-free introduction to the water, focused on building comfort through purposeful, controlled movement at your own pace.",
+    'teens-adults|Level 1': "Foundational water skills — floating, breathing, and body awareness — designed around how adults learn movement most effectively.",
+    'teens-adults|Level 2': "Developing kick technique, arm coordination, and breath control as movement through the water becomes more natural and controlled.",
+    'teens-adults|Level 3': "Connecting stroke mechanics and breathing into continuous freestyle, with an introduction to backstroke and body rotation.",
+    'teens-adults|Level 4': "Refining technique across multiple strokes while building the endurance and movement efficiency to swim with confidence.",
+    'teens-adults|Level 5': "Advanced stroke refinement and conditioning, focused on movement efficiency and technique built to last.",
+    'adaptive|Water Safety': "Foundational safety skills built through movement adapted to each swimmer's abilities, communication style, and comfort level.",
+    'adaptive|Level 1': "A gentle, individualized introduction to movement in the water, paced around each swimmer's sensory needs.",
+    'adaptive|Level 2': "Building floating, kicking, and breathing skills through movement instruction adapted to each swimmer's abilities.",
+    'adaptive|Level 3': "Connecting movement and breath into early strokes, with progressions personalized to how each swimmer learns best.",
+    'adaptive|Level 4': "Refining technique and building endurance through movement paced around each swimmer's individual goals.",
+    'adaptive|Level 5': "Introducing additional strokes and movement patterns as swimmers build strength, coordination, and independence.",
+    'adaptive|Level 6': "Expanding stroke variety and movement efficiency with instruction tailored to each swimmer's needs.",
+    'adaptive|Level 7': "Advanced skill and endurance work, refining movement and technique for swimmers ready to build lasting independence.",
+    'stroke|Freestyle': "Refine arm technique, body rotation, and breathing rhythm — the movement mechanics behind a more efficient freestyle.",
+    'stroke|Backstroke': "Improve alignment, arm timing, and breathing control for a smoother, more powerful backstroke built on better body mechanics.",
+    'stroke|Butterfly': "Develop the timing, core strength, and full-body coordination needed for an efficient, sustainable butterfly.",
+    'stroke|Breaststroke': "Sharpen kick timing, pull technique, and breathing coordination for a more efficient, better-timed breaststroke.",
+    'stroke|Speed & Endurance': "Interval training and conditioning built around movement efficiency — developing speed, stamina, and race-day confidence.",
+    'stroke|Flips & Turns': "Master the body mechanics of flip turns and wall technique to move through faster, more efficient sets and races."
+  };
+
+  // ---------- step navigation ----------
+  function goTo(stepId){
+    var steps = document.querySelectorAll('.quiz-step');
+    steps.forEach(function(s){ s.classList.remove('active'); });
+    document.getElementById(stepId).classList.add('active');
+    window.scrollTo({ top: document.getElementById('quiz-intro').offsetTop, behavior: 'smooth' });
+    updateProgress(stepId);
+  }
+
+  function updateProgress(stepId){
+    var map = {
+      'step-who': 'Step 1 of 3',
+      'step-infant-focus': 'Step 2 of 2',
+      'step-senior-focus': 'Step 2 of 2',
+      'step-goal': 'Step 2 of 4',
+      'step-stroke-pick': 'Step 3 of 4',
+      'step-skills': 'Step 3 of 4',
+      'step-format': 'Step 4 of 4',
+      'step-results': 'Your Match'
+    };
+    document.getElementById('quizProgress').textContent = map[stepId] || '';
+  }
+
+  // ---------- answer handlers ----------
+  function selectWho(track){
+    state.track = track;
+    if (track === 'infants'){ goTo('step-infant-focus'); }
+    else if (track === 'seniors'){ goTo('step-senior-focus'); }
+    else { goTo('step-goal'); }
+  }
+
+  function selectFlat(track, trackLabel, category){
+    state.track = track;
+    state.category = category;
+    showResult();
+  }
+
+  function selectGoal(goal){
+    if (goal === 'stroke'){
+      goTo('step-stroke-pick');
+    } else {
+      renderSkillChecklist(state.track);
+      goTo('step-skills');
+    }
+  }
+
+  function selectStroke(stroke){
+    state.track = 'stroke';
+    state.category = stroke;
+    goTo('step-format');
+  }
+
+  function renderSkillChecklist(track){
+    var container = document.getElementById('skillList');
+    container.innerHTML = '';
+    var skills = skillData[track] || [];
+    skills.forEach(function(skill){
+      var label = document.createElement('label');
+      label.className = 'skill-option';
+      var input = document.createElement('input');
+      input.type = 'checkbox';
+      input.value = skill.level;
+      var span = document.createElement('span');
+      span.textContent = skill.label;
+      label.appendChild(input);
+      label.appendChild(span);
+      container.appendChild(label);
+    });
+  }
+
+  function computeLevelResult(){
+    var checked = document.querySelectorAll('#skillList input:checked');
+    var maxLevel = 0;
+    checked.forEach(function(box){
+      var lvl = parseInt(box.value, 10);
+      if (lvl > maxLevel) maxLevel = lvl;
+    });
+    if (maxLevel === 0){
+      state.category = entryLevel[state.track];
+    } else {
+      state.category = 'Level ' + maxLevel;
+    }
+    goTo('step-format');
+  }
+
+  function selectFormat(format){
+    state.format = format;
+    showResult();
+  }
+
+  // ---------- results ----------
+  function programParamFor(track, format){
+    if (track === 'infants') return 'Infant Swim';
+    if (track === 'seniors') return 'Senior Aquatics';
+    if (track === 'teens-adults') return 'Adult Swim';
+    if (track === 'adaptive') return 'Adaptive Aquatics';
+    if (track === 'stroke') return 'Stroke Development';
+    if (track === 'kids'){
+      if (format === 'Private') return 'Private Lessons';
+      if (format === 'Semi-Private') return 'Semi-Private Lessons';
+      if (format === 'Group') return 'Group Lessons';
+      return 'Not sure yet';
+    }
+    return 'Not sure yet';
+  }
+
+  function showResult(){
+    var trackLabel = trackLabels[state.track];
+    var category = state.category;
+    var key = state.track + '|' + category;
+    var desc = resultData[key] || "A movement-informed lesson built around your swimmer's goals and current skill level.";
+
+    document.getElementById('resultTitle').textContent = trackLabel + ' — ' + category;
+    document.getElementById('resultDesc').textContent = desc;
+
+    var noteParts = [trackLabel, '-', category];
+    if (state.format){ noteParts.push('(' + state.format + ')'); }
+    var note = noteParts.join(' ');
+    var program = programParamFor(state.track, state.format);
+    var url = 'contact.html?program=' + encodeURIComponent(program) + '&note=' + encodeURIComponent(note);
+    document.getElementById('resultBookBtn').setAttribute('href', url);
+
+    goTo('step-results');
+  }
+
+  function restartQuiz(){
+    state = { track: null, category: null, format: null };
+    document.querySelectorAll('#skillList input[type="checkbox"]').forEach(function(box){ box.checked = false; });
+    goTo('step-who');
+  }
+
+  // ---------- nav boilerplate ----------
+  function toggleMenu(){
+    var links = document.getElementById('navlinks');
+    var burger = document.getElementById('burgerBtn');
+    var isOpen = links.classList.toggle('open');
+    burger.classList.toggle('open', isOpen);
+    burger.setAttribute('aria-expanded', isOpen);
+  }
+  document.getElementById('navlinks').addEventListener('click', function(e){
+    if (e.target.tagName === 'A'){
+      document.getElementById('navlinks').classList.remove('open');
+      document.getElementById('burgerBtn').classList.remove('open');
+      document.getElementById('burgerBtn').setAttribute('aria-expanded', 'false');
+    }
+  });
+</script>
+
+</body>
+</html>
