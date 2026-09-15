@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pricing — Beyond the Waves Aquatics</title>
-<meta name="description" content="Simple, transparent pricing for private, semi-private, group, and senior swim lessons in NYC and Long Island.">
+<meta name="description" content="Simple, transparent pricing for infant, kids, teen & adult, and senior swim lessons in NYC and Long Island.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -195,18 +195,42 @@
 </section>
 
 <div class="tabs" role="tablist">
-  <button class="tab-btn active" id="tab-kids" role="tab" aria-selected="true" aria-controls="pricing-kids" onclick="showTrack('kids')">Kids</button>
-  <button class="tab-btn" id="tab-adults" role="tab" aria-selected="false" aria-controls="pricing-adults" onclick="showTrack('adults')">Adults</button>
+  <button class="tab-btn active" id="tab-infants" role="tab" aria-selected="true" aria-controls="pricing-infants" onclick="showTrack('infants')">Infants</button>
+  <button class="tab-btn" id="tab-kids" role="tab" aria-selected="false" aria-controls="pricing-kids" onclick="showTrack('kids')">Kids</button>
+  <button class="tab-btn" id="tab-teens-adults" role="tab" aria-selected="false" aria-controls="pricing-teens-adults" onclick="showTrack('teens-adults')">Teens &amp; Adults</button>
   <button class="tab-btn" id="tab-seniors" role="tab" aria-selected="false" aria-controls="pricing-seniors" onclick="showTrack('seniors')">Seniors</button>
 </div>
 
-<section id="pricing-kids" class="track-panel" role="tabpanel" aria-labelledby="tab-kids">
+<section id="pricing-infants" class="track-panel" role="tabpanel" aria-labelledby="tab-infants">
+  <div class="senior-class-grid">
+    <div class="senior-class-card">
+      <h3>Baby and Me</h3>
+      <span class="price">$35 <em>per class</em></span>
+    </div>
+    <div class="senior-class-card">
+      <h3>Water Safety</h3>
+      <span class="price">$35 <em>per class</em></span>
+    </div>
+  </div>
+
+  <div class="pricing-block" style="margin-bottom:0;">
+    <h3>Membership</h3>
+  </div>
+  <div class="membership-grid" style="grid-template-columns:1fr; max-width:320px;">
+    <div class="membership">
+      <b>Infant</b>
+      <span class="price">$120/mo</span>
+      <p>1 class per week</p>
+    </div>
+  </div>
+</section>
+
+<section id="pricing-kids" class="track-panel" role="tabpanel" aria-labelledby="tab-kids" style="display:none;">
   <div class="pricing-block">
     <h3>Private Lessons</h3>
     <table>
       <tr><th>Duration</th><th>Single</th><th>5-Pack</th><th>10-Pack</th></tr>
       <tr><td>30 min</td><td>$60</td><td>$270 ($54/session)</td><td>$530 ($53/session)</td></tr>
-      <tr><td>45 min</td><td>$85</td><td>$400 ($80/session)</td><td>$770 ($77/session)</td></tr>
       <tr><td>60 min</td><td>$100</td><td>$480 ($96/session)</td><td>$900 ($90/session)</td></tr>
     </table>
   </div>
@@ -216,7 +240,6 @@
     <table>
       <tr><th>Duration</th><th>Per Session</th><th>5-Pack</th><th>10-Pack</th></tr>
       <tr><td>30 min</td><td>$45</td><td>$44/session</td><td>$40/session</td></tr>
-      <tr><td>45 min</td><td>$70</td><td>$68/session</td><td>$65/session</td></tr>
       <tr><td>60 min</td><td>$80</td><td>$78/session</td><td>$75/session</td></tr>
     </table>
   </div>
@@ -226,7 +249,6 @@
     <table>
       <tr><th>Duration</th><th>Per Session</th><th>5-Pack</th><th>10-Pack</th></tr>
       <tr><td>30 min</td><td>$40</td><td>$38/session</td><td>$35/session</td></tr>
-      <tr><td>45 min</td><td>$55</td><td>$54/session</td><td>$50/session</td></tr>
       <tr><td>60 min</td><td>$70</td><td>$68/session</td><td>$65/session</td></tr>
     </table>
   </div>
@@ -253,13 +275,12 @@
   </div>
 </section>
 
-<section id="pricing-adults" class="track-panel" role="tabpanel" aria-labelledby="tab-adults" style="display:none;">
+<section id="pricing-teens-adults" class="track-panel" role="tabpanel" aria-labelledby="tab-teens-adults" style="display:none;">
   <div class="pricing-block">
     <h3>Private Lessons</h3>
     <table>
       <tr><th>Duration</th><th>Single</th><th>5-Pack</th><th>10-Pack</th></tr>
       <tr><td>30 min</td><td>$60</td><td>$270 ($54/session)</td><td>$530 ($53/session)</td></tr>
-      <tr><td>45 min</td><td>$85</td><td>$400 ($80/session)</td><td>$770 ($77/session)</td></tr>
       <tr><td>60 min</td><td>$100</td><td>$480 ($96/session)</td><td>$900 ($90/session)</td></tr>
     </table>
   </div>
@@ -269,7 +290,6 @@
     <table>
       <tr><th>Duration</th><th>Per Session</th><th>5-Pack</th><th>10-Pack</th></tr>
       <tr><td>30 min</td><td>$45</td><td>$44/session</td><td>$40/session</td></tr>
-      <tr><td>45 min</td><td>$70</td><td>$68/session</td><td>$65/session</td></tr>
       <tr><td>60 min</td><td>$80</td><td>$78/session</td><td>$75/session</td></tr>
     </table>
   </div>
@@ -279,7 +299,6 @@
     <table>
       <tr><th>Duration</th><th>Per Session</th><th>5-Pack</th><th>10-Pack</th></tr>
       <tr><td>30 min</td><td>$40</td><td>$38/session</td><td>$35/session</td></tr>
-      <tr><td>45 min</td><td>$55</td><td>$54/session</td><td>$50/session</td></tr>
       <tr><td>60 min</td><td>$70</td><td>$68/session</td><td>$65/session</td></tr>
     </table>
   </div>
@@ -310,15 +329,15 @@
   <div class="senior-class-grid">
     <div class="senior-class-card">
       <h3>Water Aerobics</h3>
-      <span class="price">$20 <em>per class</em></span>
+      <span class="price">$35 <em>per class</em></span>
     </div>
     <div class="senior-class-card">
       <h3>Aqua Balance &amp; Mobility</h3>
-      <span class="price">$20 <em>per class</em></span>
+      <span class="price">$35 <em>per class</em></span>
     </div>
     <div class="senior-class-card">
       <h3>Senior Swim &amp; Water Confidence</h3>
-      <span class="price">$20 <em>per class</em></span>
+      <span class="price">$35 <em>per class</em></span>
     </div>
   </div>
 
@@ -328,7 +347,7 @@
   <div class="membership-grid" style="grid-template-columns:1fr; max-width:320px;">
     <div class="membership">
       <b>Senior</b>
-      <span class="price">$70/mo</span>
+      <span class="price">$120/mo</span>
       <p>1 class per week</p>
     </div>
   </div>
@@ -393,7 +412,7 @@
 
 <script>
   function showTrack(track){
-    var tracks = ['kids','adults','seniors'];
+    var tracks = ['infants','kids','teens-adults','seniors'];
     tracks.forEach(function(t){
       document.getElementById('pricing-' + t).style.display = (t === track) ? '' : 'none';
       var tab = document.getElementById('tab-' + t);
@@ -402,7 +421,7 @@
     });
   }
 
-  var validTracks = ['kids','adults','seniors'];
+  var validTracks = ['infants','kids','teens-adults','seniors'];
   var hashTrack = window.location.hash.replace('#','');
   if (validTracks.indexOf(hashTrack) !== -1){
     showTrack(hashTrack);
