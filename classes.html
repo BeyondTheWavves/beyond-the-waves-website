@@ -87,7 +87,7 @@
   .class-card h3{font-size:1.2rem; margin-bottom:0.4rem;}
   .class-card p{font-size:0.9rem; color:var(--navy); opacity:0.85;}
 
-  .level-card{border:1px solid rgba(11,49,66,0.12); border-top:2px solid var(--teal); padding:1.8rem; margin-bottom:1.6rem; transition:transform 0.2s ease, box-shadow 0.2s ease;}
+  .level-card{border:1px solid rgba(11,49,66,0.12); border-top:2px solid var(--teal); padding:1.8rem; margin-bottom:1.6rem; transition:transform 0.2s ease, box-shadow 0.2s ease; scroll-margin-top:100px;}
   .level-card:hover{transform:translateY(-4px); box-shadow:0 12px 28px rgba(11,49,66,0.08);}
   .level-card h3{font-size:1.4rem; margin:0 0 1.1rem;}
   .level-card > p{font-size:0.92rem; color:var(--navy); opacity:0.9; margin:0;}
@@ -98,12 +98,19 @@
   .level-row.movement-focus .label{color:var(--pink);}
 
   /* Larger, easy-to-read bulleted lists — used for Infants, Seniors, and Teen & Adult level goals */
-  .detail-card{border:1px solid rgba(11,49,66,0.12); border-top:2px solid var(--teal); padding:1.8rem; margin-bottom:1.6rem; transition:transform 0.2s ease, box-shadow 0.2s ease;}
+  .detail-card{border:1px solid rgba(11,49,66,0.12); border-top:2px solid var(--teal); padding:1.8rem; margin-bottom:1.6rem; transition:transform 0.2s ease, box-shadow 0.2s ease; scroll-margin-top:100px;}
   .detail-card:hover{transform:translateY(-4px); box-shadow:0 12px 28px rgba(11,49,66,0.08);}
   .detail-card h3{font-size:1.4rem; margin:0 0 1.1rem;}
   .detail-list{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:0.8rem;}
   .detail-list li{font-size:1rem; line-height:1.5; color:var(--navy); padding-left:1.7rem; position:relative;}
   .detail-list li::before{content:"\2713"; position:absolute; left:0; top:0; color:var(--teal); font-weight:600;}
+  .detail-card .btn-ghost, .detail-card > a.btn-ghost{margin-top:1.4rem;}
+
+  .subformats{display:flex; gap:0.5rem; flex-wrap:wrap; margin-top:1.4rem;}
+  .subformats a{font-family:'IBM Plex Mono',monospace; font-size:0.64rem; letter-spacing:0.05em; text-transform:uppercase; color:var(--navy); border:1px solid rgba(11,49,66,0.2); padding:6px 11px; border-radius:2px; transition:background 0.15s ease, color 0.15s ease, border-color 0.15s ease;}
+  .subformats a:hover{background:var(--teal); border-color:var(--teal); color:var(--paper);}
+
+  .level-card.highlight, .detail-card.highlight{box-shadow:0 0 0 3px rgba(239,93,168,0.5);}
 
   .coming-soon{text-align:center; padding:4vw 6vw 6vw; border:1px solid rgba(11,49,66,0.12); border-top:2px solid var(--teal); margin:0 6vw;}
   .coming-soon h3{font-size:1.7rem; margin-bottom:0.7rem;}
@@ -220,7 +227,7 @@
     <p>For our youngest swimmers, every class is about comfort, trust, and joyful first movement — built around babies and the grown-ups who bring them.</p>
   </div>
 
-  <div class="detail-card">
+  <div class="detail-card" id="infants-baby-and-me">
     <h3>Baby and Me</h3>
     <ul class="detail-list">
       <li>Parent and baby bonding time, right in the water together</li>
@@ -229,9 +236,10 @@
       <li>Guided water acclimation — floating, kicking, and splashing side-by-side</li>
       <li>No swimming skills required — just showing up, playing, and having fun together</li>
     </ul>
+    <a href="contact.html?program=Infant%20Swim&note=Infants%20-%20Baby%20and%20Me" class="btn-ghost">Book Now</a>
   </div>
 
-  <div class="detail-card">
+  <div class="detail-card" id="infants-water-safety">
     <h3>Water Safety</h3>
     <ul class="detail-list">
       <li>Foundational water acclimation designed for babies and toddlers</li>
@@ -240,6 +248,7 @@
       <li>Building comfort around pools, tubs, and open water early on</li>
       <li>Laying the groundwork for independent swimming down the road</li>
     </ul>
+    <a href="contact.html?program=Infant%20Swim&note=Infants%20-%20Water%20Safety" class="btn-ghost">Book Now</a>
   </div>
 </section>
 
@@ -256,60 +265,95 @@
     <div class="format-badge"><h3>Group</h3></div>
   </div>
 
-  <div class="level-card">
+  <div class="level-card" id="kids-level-1">
     <h3>Level 1</h3>
     <div class="level-row"><span class="label">Core Drills</span><p>Entry/exit practice using pool steps or ladder; "egg crack" game pouring water on head; assisted bobs with instructor support at hip.</p></div>
     <div class="level-row"><span class="label">Safety Skill</span><p>Practice reaching for the wall or instructor's hands on command ("reach!") during play, so it becomes automatic.</p></div>
     <div class="level-row"><span class="label">Breathing Skill</span><p>Bubble-blowing practice above water first, then chin at water level, then full face submerged, using a floating toy as a target.</p></div>
     <div class="level-row movement-focus"><span class="label">Movement Focus</span><p>Body awareness — learning how the body feels moving through water for the first time.</p></div>
+    <div class="subformats">
+      <a href="contact.html?program=Private%20Lessons&note=Kids%20-%20Level%201%20%28Private%29">Private</a>
+      <a href="contact.html?program=Semi-Private%20Lessons&note=Kids%20-%20Level%201%20%28Semi-Private%29">Semi-Private</a>
+      <a href="contact.html?program=Group%20Lessons&note=Kids%20-%20Level%201%20%28Group%29">Group</a>
+    </div>
   </div>
 
-  <div class="level-card">
+  <div class="level-card" id="kids-level-2">
     <h3>Level 2</h3>
     <div class="level-row"><span class="label">Core Drills</span><p>Front float with instructor support progressing to two-finger support; back float with support under head/shoulders; kickboard kicking 3–5 meters; "treasure hunt" for submersion comfort.</p></div>
     <div class="level-row"><span class="label">Safety Skill</span><p>Practice rolling from front float to back float with instructor assistance — the foundational self-rescue position.</p></div>
     <div class="level-row"><span class="label">Breathing Skill</span><p>Rhythmic bubble-blowing while fully submerged for 3–5 seconds, building duration gradually.</p></div>
     <div class="level-row movement-focus"><span class="label">Movement Focus</span><p>Alignment and buoyancy — learning to trust the water to support the body.</p></div>
+    <div class="subformats">
+      <a href="contact.html?program=Private%20Lessons&note=Kids%20-%20Level%202%20%28Private%29">Private</a>
+      <a href="contact.html?program=Semi-Private%20Lessons&note=Kids%20-%20Level%202%20%28Semi-Private%29">Semi-Private</a>
+      <a href="contact.html?program=Group%20Lessons&note=Kids%20-%20Level%202%20%28Group%29">Group</a>
+    </div>
   </div>
 
-  <div class="level-card">
+  <div class="level-card" id="kids-level-3">
     <h3>Level 3</h3>
     <div class="level-row"><span class="label">Core Drills</span><p>Streamline push-offs from the wall with a glide; freestyle arm circles with flutter kick; independent jump-in with return-to-wall practice; 5-meter freestyle attempts with minimal support.</p></div>
     <div class="level-row"><span class="label">Safety Skill</span><p>Practice calling out ("Help!") and swimming/walking to the nearest exit point from various points in the shallow end.</p></div>
     <div class="level-row"><span class="label">Breathing Skill</span><p>Basic rhythm of exhaling underwater, lifting head to inhale, re-submerging — practiced at the wall, then while kicking.</p></div>
     <div class="level-row movement-focus"><span class="label">Movement Focus</span><p>Coordination — connecting arms and legs into one continuous movement.</p></div>
+    <div class="subformats">
+      <a href="contact.html?program=Private%20Lessons&note=Kids%20-%20Level%203%20%28Private%29">Private</a>
+      <a href="contact.html?program=Semi-Private%20Lessons&note=Kids%20-%20Level%203%20%28Semi-Private%29">Semi-Private</a>
+      <a href="contact.html?program=Group%20Lessons&note=Kids%20-%20Level%203%20%28Group%29">Group</a>
+    </div>
   </div>
 
-  <div class="level-card">
+  <div class="level-card" id="kids-level-4">
     <h3>Level 4</h3>
     <div class="level-row"><span class="label">Core Drills</span><p>Side-breathing drill turning head every 3rd stroke; backstroke arm circles from a supported back float; treading water at the wall up to 10–15 seconds; deep-water comfort exercises with flotation support.</p></div>
     <div class="level-row"><span class="label">Safety Skill</span><p>Tread water for short bursts within arm's reach of the wall, reinforcing the wall as a "safety base."</p></div>
     <div class="level-row"><span class="label">Breathing Skill</span><p>Side-breathing coordinated with the freestyle stroke using a kickboard to isolate the breathing side.</p></div>
     <div class="level-row movement-focus"><span class="label">Movement Focus</span><p>Rotation and timing — coordinating breath with body rotation.</p></div>
+    <div class="subformats">
+      <a href="contact.html?program=Private%20Lessons&note=Kids%20-%20Level%204%20%28Private%29">Private</a>
+      <a href="contact.html?program=Semi-Private%20Lessons&note=Kids%20-%20Level%204%20%28Semi-Private%29">Semi-Private</a>
+      <a href="contact.html?program=Group%20Lessons&note=Kids%20-%20Level%204%20%28Group%29">Group</a>
+    </div>
   </div>
 
-  <div class="level-card">
+  <div class="level-card" id="kids-level-5">
     <h3>Level 5</h3>
     <div class="level-row"><span class="label">Core Drills</span><p>Breaststroke kick introduced on dry land, then with a kickboard; 25m freestyle attempts; backstroke refinement; treading water building to 30+ seconds.</p></div>
     <div class="level-row"><span class="label">Safety Skill</span><p>"Swim-float-swim" sequence — swim, roll to a back float to rest, resume swimming.</p></div>
     <div class="level-row"><span class="label">Breathing Skill</span><p>Bilateral breathing introduced — every 3 strokes, alternating sides.</p></div>
     <div class="level-row movement-focus"><span class="label">Movement Focus</span><p>Bilateral coordination — building rhythm across multiple strokes.</p></div>
+    <div class="subformats">
+      <a href="contact.html?program=Private%20Lessons&note=Kids%20-%20Level%205%20%28Private%29">Private</a>
+      <a href="contact.html?program=Semi-Private%20Lessons&note=Kids%20-%20Level%205%20%28Semi-Private%29">Semi-Private</a>
+      <a href="contact.html?program=Group%20Lessons&note=Kids%20-%20Level%205%20%28Group%29">Group</a>
+    </div>
   </div>
 
-  <div class="level-card">
+  <div class="level-card" id="kids-level-6">
     <h3>Level 6</h3>
     <div class="level-row"><span class="label">Core Drills</span><p>Butterfly introduction with dolphin kick, then arm motion; dive entry practice; 50m continuous swim sets mixing strokes; open turn practice at the wall.</p></div>
     <div class="level-row"><span class="label">Safety Skill</span><p>Reach-or-throw assist scenario using a pool noodle or kickboard without entering the water.</p></div>
     <div class="level-row"><span class="label">Breathing Skill</span><p>Controlled breathing during wall turns, exhaling fully before pushing off.</p></div>
     <div class="level-row movement-focus"><span class="label">Movement Focus</span><p>Movement efficiency — reducing drag and wasted motion across all strokes.</p></div>
+    <div class="subformats">
+      <a href="contact.html?program=Private%20Lessons&note=Kids%20-%20Level%206%20%28Private%29">Private</a>
+      <a href="contact.html?program=Semi-Private%20Lessons&note=Kids%20-%20Level%206%20%28Semi-Private%29">Semi-Private</a>
+      <a href="contact.html?program=Group%20Lessons&note=Kids%20-%20Level%206%20%28Group%29">Group</a>
+    </div>
   </div>
 
-  <div class="level-card">
+  <div class="level-card" id="kids-level-7">
     <h3>Level 7</h3>
     <div class="level-row"><span class="label">Core Drills</span><p>Flip turn practice broken into steps; race-pace interval sets (e.g., 4x25m); racing dive start practice; endurance sets with minimal rest.</p></div>
     <div class="level-row"><span class="label">Safety Skill</span><p>Recognizing signs of a swimmer in distress and the correct response (alert a lifeguard/adult, do not enter the water alone).</p></div>
     <div class="level-row"><span class="label">Breathing Skill</span><p>Race-pace breath control, breathing every 4–5 strokes to build lung efficiency.</p></div>
     <div class="level-row movement-focus"><span class="label">Movement Focus</span><p>Power and endurance — refining force production and stamina under race conditions.</p></div>
+    <div class="subformats">
+      <a href="contact.html?program=Private%20Lessons&note=Kids%20-%20Level%207%20%28Private%29">Private</a>
+      <a href="contact.html?program=Semi-Private%20Lessons&note=Kids%20-%20Level%207%20%28Semi-Private%29">Semi-Private</a>
+      <a href="contact.html?program=Group%20Lessons&note=Kids%20-%20Level%207%20%28Group%29">Group</a>
+    </div>
   </div>
 </section>
 
@@ -326,52 +370,82 @@
     <div class="format-badge"><h3>Group</h3></div>
   </div>
 
-  <div class="level-card">
+  <div class="level-card" id="teens-adults-level-1">
     <h3>Level 1</h3>
     <div class="level-row"><span class="label">Core Drills</span><p>Independent, comfortable entries and exits from the pool; floating on the back with instructor support while the body learns to trust the water.</p></div>
     <div class="level-row"><span class="label">Safety Skill</span><p>Understanding basic pool safety and etiquette — the rules and awareness every swimmer needs before building technique.</p></div>
     <div class="level-row"><span class="label">Breathing Skill</span><p>Putting the face in the water and exhaling bubbles without panic, using a calming technique to manage breathing and anxiety together.</p></div>
     <div class="level-row movement-focus"><span class="label">Movement Focus</span><p>Body awareness — learning to feel calm and supported while moving through water for the first time.</p></div>
+    <div class="subformats">
+      <a href="contact.html?program=Adult%20Swim&note=Teens%20%26%20Adults%20-%20Level%201%20%28Private%29">Private</a>
+      <a href="contact.html?program=Adult%20Swim&note=Teens%20%26%20Adults%20-%20Level%201%20%28Semi-Private%29">Semi-Private</a>
+      <a href="contact.html?program=Adult%20Swim&note=Teens%20%26%20Adults%20-%20Level%201%20%28Group%29">Group</a>
+    </div>
   </div>
 
-  <div class="level-card">
+  <div class="level-card" id="teens-adults-level-2">
     <h3>Level 2</h3>
     <div class="level-row"><span class="label">Core Drills</span><p>Floating independently on the front and back for 10+ seconds; kicking effectively with a kickboard; pushing off the wall into a 2–3 meter glide.</p></div>
     <div class="level-row"><span class="label">Safety Skill</span><p>Building comfort moving from shallow into deeper water, growing the awareness needed to feel safe in bigger spaces.</p></div>
     <div class="level-row"><span class="label">Breathing Skill</span><p>Submerging comfortably and opening the eyes underwater, building breath control and confidence beneath the surface.</p></div>
     <div class="level-row movement-focus"><span class="label">Movement Focus</span><p>Alignment and buoyancy — learning to trust the water to support the body.</p></div>
+    <div class="subformats">
+      <a href="contact.html?program=Adult%20Swim&note=Teens%20%26%20Adults%20-%20Level%202%20%28Private%29">Private</a>
+      <a href="contact.html?program=Adult%20Swim&note=Teens%20%26%20Adults%20-%20Level%202%20%28Semi-Private%29">Semi-Private</a>
+      <a href="contact.html?program=Adult%20Swim&note=Teens%20%26%20Adults%20-%20Level%202%20%28Group%29">Group</a>
+    </div>
   </div>
 
-  <div class="level-card">
+  <div class="level-card" id="teens-adults-level-3">
     <h3>Level 3</h3>
     <div class="level-row"><span class="label">Core Drills</span><p>Beginning backstroke with proper body alignment; swimming 10 meters of freestyle with minimal stopping.</p></div>
     <div class="level-row"><span class="label">Safety Skill</span><p>Treading water for 10–15 seconds and safely recovering if water enters the mouth or nose — building composure under mild strain.</p></div>
     <div class="level-row"><span class="label">Breathing Skill</span><p>Freestyle arm motion paired with rhythmic breathing, connecting stroke and breath into one pattern.</p></div>
     <div class="level-row movement-focus"><span class="label">Movement Focus</span><p>Coordination — connecting arms, legs, and breath into one continuous rhythm.</p></div>
+    <div class="subformats">
+      <a href="contact.html?program=Adult%20Swim&note=Teens%20%26%20Adults%20-%20Level%203%20%28Private%29">Private</a>
+      <a href="contact.html?program=Adult%20Swim&note=Teens%20%26%20Adults%20-%20Level%203%20%28Semi-Private%29">Semi-Private</a>
+      <a href="contact.html?program=Adult%20Swim&note=Teens%20%26%20Adults%20-%20Level%203%20%28Group%29">Group</a>
+    </div>
   </div>
 
-  <div class="level-card">
+  <div class="level-card" id="teens-adults-level-4">
     <h3>Level 4</h3>
     <div class="level-row"><span class="label">Core Drills</span><p>Building comfort in deep water without touching the wall; performing a controlled jump or dive entry.</p></div>
     <div class="level-row"><span class="label">Safety Skill</span><p>Treading water for 30+ seconds, reinforcing the stamina and composure to pause safely mid-swim.</p></div>
     <div class="level-row"><span class="label">Breathing Skill</span><p>Maintaining steady, controlled breathing while swimming freestyle and backstroke continuously for 15–20 meters.</p></div>
     <div class="level-row movement-focus"><span class="label">Movement Focus</span><p>Rotation and timing — coordinating breath and body position as distance and confidence grow.</p></div>
+    <div class="subformats">
+      <a href="contact.html?program=Adult%20Swim&note=Teens%20%26%20Adults%20-%20Level%204%20%28Private%29">Private</a>
+      <a href="contact.html?program=Adult%20Swim&note=Teens%20%26%20Adults%20-%20Level%204%20%28Semi-Private%29">Semi-Private</a>
+      <a href="contact.html?program=Adult%20Swim&note=Teens%20%26%20Adults%20-%20Level%204%20%28Group%29">Group</a>
+    </div>
   </div>
 
-  <div class="level-card">
+  <div class="level-card" id="teens-adults-level-5">
     <h3>Level 5</h3>
     <div class="level-row"><span class="label">Core Drills</span><p>Refining freestyle efficiency by reducing drag and improving rotation; introducing proper breaststroke technique; swimming continuous 50-meter laps with steady pacing.</p></div>
     <div class="level-row"><span class="label">Safety Skill</span><p>Building the endurance to swim continuously for 10+ minutes — the stamina that underlies safe, sustained swimming.</p></div>
     <div class="level-row"><span class="label">Breathing Skill</span><p>Improving a bilateral breathing pattern, alternating sides for better balance and control.</p></div>
     <div class="level-row movement-focus"><span class="label">Movement Focus</span><p>Bilateral coordination — building rhythm and efficiency across multiple strokes.</p></div>
+    <div class="subformats">
+      <a href="contact.html?program=Adult%20Swim&note=Teens%20%26%20Adults%20-%20Level%205%20%28Private%29">Private</a>
+      <a href="contact.html?program=Adult%20Swim&note=Teens%20%26%20Adults%20-%20Level%205%20%28Semi-Private%29">Semi-Private</a>
+      <a href="contact.html?program=Adult%20Swim&note=Teens%20%26%20Adults%20-%20Level%205%20%28Group%29">Group</a>
+    </div>
   </div>
 
-  <div class="level-card">
+  <div class="level-card" id="teens-adults-level-6">
     <h3>Level 6</h3>
     <div class="level-row"><span class="label">Core Drills</span><p>All strokes functioning over short distances; completing 100+ meters of continuous swimming; swimming a full lap session independently, working toward a personal fitness or distance goal.</p></div>
     <div class="level-row"><span class="label">Safety Skill</span><p>Open-water readiness — sighting and navigation skills for swimming safely outside the pool.</p></div>
     <div class="level-row"><span class="label">Breathing Skill</span><p>Calm, controlled breathing in open or choppy water, even as conditions become less predictable.</p></div>
     <div class="level-row movement-focus"><span class="label">Movement Focus</span><p>Independence and efficiency — moving with control and confidence across a full, self-directed session.</p></div>
+    <div class="subformats">
+      <a href="contact.html?program=Adult%20Swim&note=Teens%20%26%20Adults%20-%20Level%206%20%28Private%29">Private</a>
+      <a href="contact.html?program=Adult%20Swim&note=Teens%20%26%20Adults%20-%20Level%206%20%28Semi-Private%29">Semi-Private</a>
+      <a href="contact.html?program=Adult%20Swim&note=Teens%20%26%20Adults%20-%20Level%206%20%28Group%29">Group</a>
+    </div>
   </div>
 </section>
 
@@ -382,7 +456,7 @@
     <p>Low-impact, supportive classes built on an understanding of movement, balance, and mobility — designed for older adults at a pace that feels right for you.</p>
   </div>
 
-  <div class="detail-card">
+  <div class="detail-card" id="seniors-water-aerobics">
     <h3>Water Aerobics</h3>
     <ul class="detail-list">
       <li>A low-impact, full-body workout designed for every fitness level</li>
@@ -391,9 +465,10 @@
       <li>A social, supportive group setting — no swimming ability required</li>
       <li>Great for improving stamina, balance, and everyday mobility</li>
     </ul>
+    <a href="contact.html?program=Senior%20Aquatics&note=Seniors%20-%20Water%20Aerobics" class="btn-ghost">Book Now</a>
   </div>
 
-  <div class="detail-card">
+  <div class="detail-card" id="seniors-aqua-balance-mobility">
     <h3>Aqua Balance &amp; Mobility</h3>
     <ul class="detail-list">
       <li>Gentle, guided movement focused on balance and coordination</li>
@@ -402,9 +477,10 @@
       <li>Builds confidence moving in and out of the water safely</li>
       <li>A calm, supportive environment centered on functional movement</li>
     </ul>
+    <a href="contact.html?program=Senior%20Aquatics&note=Seniors%20-%20Aqua%20Balance%20%26%20Mobility" class="btn-ghost">Book Now</a>
   </div>
 
-  <div class="detail-card">
+  <div class="detail-card" id="seniors-senior-swim-water-confidence">
     <h3>Senior Swim &amp; Water Confidence</h3>
     <ul class="detail-list">
       <li>Personalized instruction for swimmers at any experience level</li>
@@ -413,6 +489,7 @@
       <li>Flexible pacing — whether you're starting fresh or refining old skills</li>
       <li>A welcoming space to rebuild comfort around water at any age</li>
     </ul>
+    <a href="contact.html?program=Senior%20Aquatics&note=Seniors%20-%20Senior%20Swim%20%26%20Water%20Confidence" class="btn-ghost">Book Now</a>
   </div>
 </section>
 
@@ -488,10 +565,31 @@
   }
 
   var validTracks = ['infants','kids','teens-adults','seniors','adaptive','stroke','therapy'];
-  var hashTrack = window.location.hash.replace('#','');
-  if (validTracks.indexOf(hashTrack) !== -1){
-    showTrack(hashTrack);
+
+  function handleHash(){
+    var hash = window.location.hash.replace('#','');
+    if (!hash) return;
+    if (validTracks.indexOf(hash) !== -1){
+      showTrack(hash);
+      return;
+    }
+    var matchedTrack = null;
+    validTracks.forEach(function(t){
+      if (hash.indexOf(t + '-') === 0){ matchedTrack = t; }
+    });
+    if (matchedTrack){
+      showTrack(matchedTrack);
+      setTimeout(function(){
+        var el = document.getElementById(hash);
+        if (el){
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          el.classList.add('highlight');
+          setTimeout(function(){ el.classList.remove('highlight'); }, 2200);
+        }
+      }, 60);
+    }
   }
+  handleHash();
 
   function toggleMenu(){
     var links = document.getElementById('navlinks');
